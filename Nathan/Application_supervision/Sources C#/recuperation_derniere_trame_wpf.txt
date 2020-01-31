@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
+namespace WpfAppConnexionBDD
+{
+    /// <summary>
+    /// Logique d'interaction pour MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        private MySqlConnection conn;
+
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+
+            string myConnectionString = "server=10.6.0.1;"
+                                              + "uid=meteo;"
+                                              + "pwd=Nantes44;"
+                                              + "database=meteo;"
+                                              + "Charset=latin1;";
+
+            conn = new MySqlConnection(myConnectionString);
+
+
+            conn.Open();
+
+            string sql = "SELECT trame FROM `trame` ORDER BY `trame`.`date_heure` DESC LIMIT 1 ";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdrDerniereTrame = cmd.ExecuteReader();
+
+            rdrDerniereTrame.Read();
+
+            string trame = rdrDerniereTrame["trame"].ToString();
+            conn.Close();
+
+            MessageBox.Show(trame);
+
+
+        }
+    }
+}
