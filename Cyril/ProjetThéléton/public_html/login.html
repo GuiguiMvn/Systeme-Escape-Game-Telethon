@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link href="./assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="./assets/favicon.ico" rel="icon">
+  <link href="./main.97292821.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" media="screen" type="text/css" /></head>
+
+   
+    <body>
+        <div id="container">
+            <!-- zone de connexion -->
+            
+            <form action="verification.php" method="POST">
+                <h1>Connexion</h1>
+                
+                <label><b>Nom d'utilisateur</b></label>
+                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+
+                <label><b>Mot de passe</b></label>
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+                <input type="submit" id='submit' value='LOGIN' >
+                <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect </p>";
+                }
+                ?>
+            </form>
+        </div>
+    </body>
+
+ <!-- Add your content of header -->
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="navbar-collapse">
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="./index.html#contact-section-container" title="" class="anchor-link">Contact</a></li>
+           <li> <a href="./index.html#inscription-section-container" title="" class="anchor-link">Inscription</a></li>
+            <li>
+                <p>
+                    <a href="./login.html" class="btn btn-default navbar-btn" >Espace Membre</a>
+                </p>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<footer class="footer-container white-text-container">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-4">
+                    <h4>About us</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h4>Do you like ? Share this !</h4>
+                    <div>
+                        <p>
+                            <a href="https://www.twitter.com" class="fa-icon" title="">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                            <a href="https://www.facebook.com" class="fa-icon" title="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com" class="fa-icon" title="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div>
+                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></small></p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                        
+                    <h4>Subscribe to newsletter</h4>
+                    
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control footer-input-text">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-newsletter ">OK</button>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+});
+</script>
+<script type="text/javascript" src="./main.faaf51f9.js"></script>
