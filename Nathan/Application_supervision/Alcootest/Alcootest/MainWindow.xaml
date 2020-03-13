@@ -1,0 +1,87 @@
+﻿<Window x:Class="Alcootest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alcootest"
+        mc:Ignorable="d"
+        Title="Alcootest - Vérifiez votre niveau d'alcoolémie !" Height="735" Width="1005" MinHeight="735" MinWidth="1005" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,-13,0,0">
+
+        <Image Margin="25,28,448,461" x:Name="logo_Alcootest" Panel.ZIndex="0" Opacity="1" Height="208" VerticalAlignment="Center" HorizontalAlignment="Center" Width="506">
+            <Image.Source>
+                <BitmapImage UriSource="logo_alcootest.png" />
+            </Image.Source>
+        </Image>
+
+
+        <Label Content="Bienvenue sur le &#xD;&#xA;programme ALCOOTEST !" Margin="585,96,132,523" FontSize="22" HorizontalAlignment="Center" Width="262" Height="78" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight"/>
+        <Separator Height="19" Margin="27,217,33,461" VerticalAlignment="Center"/>
+
+        <Label Content="Vous êtes : (Veuillez renseigner un des éléments ci-dessous) :" HorizontalAlignment="Center" Margin="316,227,333,444" VerticalAlignment="Center"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="337,256,342,421" Width="300" Height="20">
+            <RadioButton x:Name="ckHomme" Content="Homme" Margin="0,0,30,0" Checked="CkHomme_Checked" IsChecked="True"/>
+            <RadioButton x:Name="ckFemme" Content="Femme" Margin="0,0,30,0" Checked="CkFemme_Checked"/>
+            <CheckBox x:Name="ckJeune" Content="Jeune conducteur" Margin="0,0,0,0" Checked="CkJeune_Checked" Width="120"/>
+        </StackPanel>
+        <Label Content="Votre poids est de :" HorizontalAlignment="Center" Margin="419,281,448,390" VerticalAlignment="Center"/>
+        <Label Content="Kg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="493,307,462,364" RenderTransformOrigin="0.708,-0.038"/>
+        <Separator Height="20" Margin="35,271,39,406" VerticalAlignment="Center"/>
+        <Separator Height="19" Margin="35,332,39,346" VerticalAlignment="Center"/>
+        <Label Content="Vous avez consommer :" HorizontalAlignment="Center" Height="30" Margin="411,351,428,316" VerticalAlignment="Center" Width="140"/>
+
+        <TextBox x:Name="TxtBoxPoids" HorizontalAlignment="Center" Height="24" Margin="433,307,486,366" TextWrapping="Wrap" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.467,0.792"  />
+        <Button x:Name="Valider" Content="Valider" HorizontalAlignment="Center" Height="32" Margin="761,421,136,254" VerticalAlignment="Center" Width="90" Click="Valider_Click"/>
+        <Label x:Name="lblTaux" Content=". . . " HorizontalAlignment="Center" Margin="419,550,262,115" VerticalAlignment="Center" Width="298" FontFamily="Century Gothic" FontSize="18"/>
+        <Separator Height="20" Margin="35,516,39,161" VerticalAlignment="Center"/>
+        <Label Content="Votre taux d'alcoolemie est de : " HorizontalAlignment="Center" Margin="131,550,554,115" VerticalAlignment="Center" FontSize="18" FontFamily="Century Gothic"/>
+
+
+
+        <Image Margin="199,386,712,235" x:Name="biere" Panel.ZIndex="0" Opacity="0.9" RenderTransformOrigin="-2.074,1.118" Height="76" VerticalAlignment="Center" HorizontalAlignment="Center" Width="68">
+            <Image.Source>
+                <BitmapImage UriSource="logo_biere.png" />
+            </Image.Source>
+        </Image>
+
+        <Image Margin="345,386,566,235" x:Name="cocktail" Panel.ZIndex="0" Opacity="0.6" RenderTransformOrigin="1.838,0.487" Height="76" VerticalAlignment="Center" HorizontalAlignment="Center" Width="68">
+            <Image.Source>
+                <BitmapImage UriSource="logo_cocktail.png" />
+            </Image.Source>
+        </Image>
+
+        <Image Margin="483,386,428,235" x:Name="vin" Panel.ZIndex="0" Opacity="0.6" RenderTransformOrigin="1.838,0.487" Height="76" VerticalAlignment="Center" HorizontalAlignment="Center" Width="68">
+            <Image.Source>
+                <BitmapImage UriSource="logo_vin.png" />
+            </Image.Source>
+        </Image>
+
+        <Image Margin="629,386,282,235" x:Name="whisky" Panel.ZIndex="0" Opacity="0.6" RenderTransformOrigin="1.838,0.487" Height="76" VerticalAlignment="Center" HorizontalAlignment="Center" Width="68">
+            <Image.Source>
+                <BitmapImage UriSource="logo_whisky.png" />
+            </Image.Source>
+        </Image>
+
+        <Button Content="Reinitialiser" HorizontalAlignment="Center" Height="34" Margin="757,551,132,112" VerticalAlignment="Center" Width="90" Click="Reset_Click"/>
+        <Label x:Name="lblConduite" Content="Validez pour vérifier votre état !" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="131,587,132,76" Height="auto" Width="716" FontSize="20" FontFamily="Tahoma" IsHitTestVisible="False" HorizontalContentAlignment="Center"/>
+        <Separator HorizontalAlignment="Center" Height="11" Margin="453,181,444,505" VerticalAlignment="Center" Width="82" RenderTransformOrigin="1.125,0.558">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.184"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Button x:Name="btnWindowInfo" Content="A propos ..." HorizontalAlignment="Center" Height="21" Margin="828,65,71,621" VerticalAlignment="Center" Width="88" Click="btnWindowInfo_Click"/>
+
+
+        <Label Content="Nombre de verre(s) :" HorizontalAlignment="Center" Height="30" Margin="57,475,790,202" VerticalAlignment="Center" Width="140"/>
+        <TextBox x:Name="TxtNbBiere" HorizontalAlignment="Center" Height="23" Margin="222,479,735,205" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="30" TextAlignment="Center"/>
+        <TextBox x:Name="TxtNbCocktail" HorizontalAlignment="Center" Height="23" Margin="370,479,587,205" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="30" TextAlignment="Center"/>
+        <TextBox x:Name="TxtNbVin" HorizontalAlignment="Center" Height="23" Margin="505,479,452,205" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="30" TextAlignment="Center"/>
+        <TextBox x:Name="TxtNbAlcoolFort" HorizontalAlignment="Center" Height="23" Margin="653,479,304,205" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="30" TextAlignment="Center" RenderTransformOrigin="4.133,0.87"/>
+
+    </Grid>
+</Window>

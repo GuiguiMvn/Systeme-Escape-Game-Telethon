@@ -1,0 +1,18 @@
+lblTaux.Content = "Taux d'Alcoolémie : " + Buveur.get_alcoolemie().ToString("0.##") +" g/L de sang";
+            double bonjour = Double.Parse(Buveur.get_alcoolemie().ToString("0.##"));
+            //test.Content = bonjour;
+            double inter = 0.50;
+            double interjc = 0.20;
+            if (bonjour > inter && CheckJC.IsChecked == false)
+            {
+                lblRoute.Content = "Ta pas le droit de conduire !!!";
+
+            }
+            else
+            {
+                lblRoute.Content = "Ta le droit de conduire !!!";
+            }
+            if (bonjour > interjc && CheckJC.IsChecked == true)
+            {
+                lblRoute.Content = "Ta pas le droit de conduire !!!";
+            }

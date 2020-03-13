@@ -1,0 +1,17 @@
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\MainWindow.g.cs
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\App.g.cs
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest_MarkupCompile.cache
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest_MarkupCompile.lref
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\bin\Debug\Alcootest.exe.config
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\bin\Debug\Alcootest.exe
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\bin\Debug\Alcootest.pdb
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\MainWindow.baml
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.g.resources
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.Properties.Resources.resources
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.csproj.GenerateResource.cache
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.csproj.CoreCompileInputs.cache
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.exe
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.pdb
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Alcootest.csprojAssemblyReference.cache
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Window1.g.cs
+C:\Users\nathan.guigand\source\repos\Alcootest\Alcootest\obj\Debug\Window1.baml
