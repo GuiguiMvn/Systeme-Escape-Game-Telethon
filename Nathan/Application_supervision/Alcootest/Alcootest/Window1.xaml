@@ -1,0 +1,41 @@
+﻿<Window x:Class="Alcootest.WindowInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alcootest"
+        mc:Ignorable="d"
+        Title="A propos ..." Height="611.842" Width="455.263" MinHeight="611.842" MinWidth="455.263">
+    <Grid Margin="0,0,-8,8">
+        <Label Content="A propos de l'application :" HorizontalAlignment="Center" Height="54" Margin="96,10,111,510" VerticalAlignment="Center" Width="248" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <Image  x:Name="logo_Alcootest" HorizontalAlignment="Center" Height="137" Margin="35,64,44,373" VerticalAlignment="Center" Width="376">
+            <Image.Source>
+                <BitmapImage UriSource="logo_alcootest.png" />
+            </Image.Source>
+        </Image>
+        <RichTextBox HorizontalAlignment="Center" Height="166" Margin="35,206,44,202" VerticalAlignment="Center" Width="376">
+            <FlowDocument>
+                <Paragraph TextAlignment="Center">
+                    <Run Text="Réalisée par : Nathan GUIGAND"/>
+                </Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Run Text="Étudiant en 2ème année de BTS Systèmes Numériques option Informatique et Réseaux au Campus Saint Félix - La Salle de Nantes"/>
+                </Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Run Text="Contact : nathan@guigand.com"/>
+                </Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Run/>
+                </Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Run Text="Copyright 2019 - Tout droit réservé."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Image  x:Name="logo_campus" HorizontalAlignment="Center" Height="137" Margin="35,377,44,60" VerticalAlignment="Center" Width="376">
+            <Image.Source>
+                <BitmapImage UriSource="logo_campus.jpg" />
+            </Image.Source>
+        </Image>
+    </Grid>
+</Window>
