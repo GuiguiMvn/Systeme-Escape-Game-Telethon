@@ -13,3 +13,17 @@ c:\users\nathan.guigand\source\repos\WpfCamero\WpfCamero\obj\Debug\WpfCamero.Pro
 c:\users\nathan.guigand\source\repos\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.GenerateResource.Cache
 c:\users\nathan.guigand\source\repos\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.CoreCompileInputs.cache
 c:\users\nathan.guigand\source\repos\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\bin\Debug\WpfCamero.exe.config
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\bin\Debug\WpfCamero.exe
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\bin\Debug\WpfCamero.pdb
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csprojAssemblyReference.cache
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\MainWindow.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\App.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero_MarkupCompile.cache
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero_MarkupCompile.lref
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\MainWindow.baml
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.g.resources
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.Properties.Resources.resources
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.GenerateResource.cache
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.exe
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.pdb
