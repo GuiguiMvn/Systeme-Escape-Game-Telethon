@@ -23,23 +23,23 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer timer;
+       // private DispatcherTimer timer;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            timer = new DispatcherTimer();
+         /*   timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
-            timer.Start();
+            timer.Start(); */
         }
 
-        void timer_Tick(object sender, EventArgs e)
+    /*    void timer_Tick(object sender, EventArgs e)
         {
             lblTime.Content = DateTime.Now.ToLongTimeString();
             wbDLink.Refresh();
-        }
+        } */
     }
 
 

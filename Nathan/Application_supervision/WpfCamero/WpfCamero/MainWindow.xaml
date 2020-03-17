@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCamero"
         mc:Ignorable="d"
-        Title="WebBrowserHelperDemo" Height="600" Width="800">
+        Title="WebBrowserHelperDemo" Height="735" Width="1005" MinHeight="735" MinWidth="1005" WindowStartupLocation="CenterScreen">
 
 
-    <Grid>
+    <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
         <WebBrowser x:Name="wbDLink" Source="http://10.16.37.161/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
