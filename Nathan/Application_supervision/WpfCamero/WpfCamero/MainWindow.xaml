@@ -10,7 +10,7 @@
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
-        <WebBrowser x:Name="wbDLink" Source="http://10.16.37.161/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
+        <WebBrowser x:Name="wbDLink" Source="http://stfelixlasalle.fr" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
         <Label x:Name="lblTime" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25"/>
         <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
@@ -31,6 +31,11 @@
         <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="711" Margin="-1,-50,-1,0" >
             <Image.Source>
                 <BitmapImage UriSource="Ligne_camera.PNG"/>
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="60" Margin="-280,-128,0,0" >
+            <Image.Source>
+                <BitmapImage UriSource="etoile logo.PNG"/>
             </Image.Source>
         </Image>
     </Grid>

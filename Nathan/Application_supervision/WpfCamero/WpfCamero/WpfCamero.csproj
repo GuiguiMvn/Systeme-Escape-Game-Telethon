@@ -103,5 +103,8 @@
     <Resource Include="ligne_camera.png" />
     <Resource Include="logo-telethon-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="etoile logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

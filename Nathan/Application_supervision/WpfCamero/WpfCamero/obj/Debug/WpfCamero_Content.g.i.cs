@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ligne_camera.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logo-telethon-2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("etoile%20logo.png")]
 
 
