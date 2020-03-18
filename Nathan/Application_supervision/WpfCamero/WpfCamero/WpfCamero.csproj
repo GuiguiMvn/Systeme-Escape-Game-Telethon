@@ -93,5 +93,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ligne violette avec logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ligne jaune.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ligne_camera.png" />
+    <Resource Include="logo-telethon-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

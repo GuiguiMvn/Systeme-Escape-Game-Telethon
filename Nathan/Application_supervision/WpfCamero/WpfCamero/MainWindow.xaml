@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCamero"
         mc:Ignorable="d"
-        Title="WebBrowserHelperDemo" Height="735" Width="1005" MinHeight="735" MinWidth="1005" WindowStartupLocation="CenterScreen">
+        Title="Superviser l'Escape Game !" Height="735" Width="1005" MinHeight="735" MinWidth="1005" MaxHeight="735" MaxWidth="1005" WindowStartupLocation="CenterScreen">
 
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
@@ -13,6 +13,26 @@
         <WebBrowser x:Name="wbDLink" Source="http://10.16.37.161/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
         <Label x:Name="lblTime" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25"/>
+        <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
+            <Image.Source>
+                <BitmapImage UriSource="ligne violette avec logo.png" />
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="85" Margin="-286,489,-1,-146" VerticalAlignment="Top" Width="996" >
+            <Image.Source>
+                <BitmapImage UriSource="Ligne jaune.PNG"/>
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="616" VerticalAlignment="Top" Width="350" Margin="-320,24,0,-212" Opacity="0.165" >
+            <Image.Source>
+                <BitmapImage UriSource="logo-telethon-2.PNG"/>
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="711" Margin="-1,-50,-1,0" >
+            <Image.Source>
+                <BitmapImage UriSource="Ligne_camera.PNG"/>
+            </Image.Source>
+        </Image>
     </Grid>
 
 
