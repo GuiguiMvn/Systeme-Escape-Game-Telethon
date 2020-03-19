@@ -18,7 +18,7 @@
                 <BitmapImage UriSource="ligne violette avec logo.png" />
             </Image.Source>
         </Image>
-        <Image HorizontalAlignment="Left" Height="85" Margin="-286,489,-1,-146" VerticalAlignment="Top" Width="996" >
+        <Image HorizontalAlignment="Left" Height="85" Margin="-286,483,-1,-140" VerticalAlignment="Top" Width="996" >
             <Image.Source>
                 <BitmapImage UriSource="Ligne jaune.PNG"/>
             </Image.Source>
