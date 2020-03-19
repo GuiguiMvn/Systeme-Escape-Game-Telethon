@@ -23,7 +23,7 @@
                 <BitmapImage UriSource="Ligne jaune.PNG"/>
             </Image.Source>
         </Image>
-        <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-320,24,0,0" Opacity="0.165" >
+        <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-310,24,0,0" Opacity="0.165" >
             <Image.Source>
                 <BitmapImage UriSource="logo-telethon-2.PNG"/>
             </Image.Source>
@@ -33,13 +33,14 @@
                 <BitmapImage UriSource="Ligne_camera.PNG"/>
             </Image.Source>
         </Image>
-        <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="60" Margin="-280,-128,0,0" >
+        <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="60" Margin="-280,-133,0,0" >
             <Image.Source>
                 <BitmapImage UriSource="etoile logo.PNG"/>
             </Image.Source>
         </Image>
         <Label Content="Chronomètre :" HorizontalAlignment="Left" Height="29" Margin="-286,-5,0,0" VerticalAlignment="Top" Width="128" FontFamily="Century Gothic" FontSize="16"/>
         <Label Content="Message dans la salle :" HorizontalAlignment="Left" Height="29" Margin="-286,283,0,0" VerticalAlignment="Top" Width="194" FontFamily="Century Gothic" FontSize="16"/>
+        <Rectangle Fill="#FFFFFFBA" HorizontalAlignment="Left" Height="65" Margin="-280,312,0,0" Stroke="Black" VerticalAlignment="Top" Width="240"/>
     </Grid>
 
 
