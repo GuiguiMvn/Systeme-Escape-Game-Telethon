@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("etoile%20logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("window%20creer%20partie%20(en%20tete).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("window%20envoi%20d\'indice%20(en%20tete).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("window%20envoi%20d\'indice%20(pied%20de%20page).png")]
 
 
