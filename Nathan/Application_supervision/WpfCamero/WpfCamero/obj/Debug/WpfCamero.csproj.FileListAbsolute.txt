@@ -27,3 +27,7 @@ C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.GenerateResource.cache
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.exe
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.pdb
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_indice.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_lancement.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_indice.baml
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_lancement.baml

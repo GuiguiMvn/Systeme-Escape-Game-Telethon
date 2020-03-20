@@ -35,11 +35,17 @@ namespace WpfCamero
             timer.Start(); */
         }
 
-    /*    void timer_Tick(object sender, EventArgs e)
+        /*    void timer_Tick(object sender, EventArgs e)
+            {
+                lblTime.Content = DateTime.Now.ToLongTimeString();
+                wbDLink.Refresh();
+            } */
+
+        private void btnWindow_indice_Click(object sender, EventArgs e)
         {
-            lblTime.Content = DateTime.Now.ToLongTimeString();
-            wbDLink.Refresh();
-        } */
+            Window_indice Fen = new Window_indice();
+            Fen.ShowDialog();
+        }
     }
 
 

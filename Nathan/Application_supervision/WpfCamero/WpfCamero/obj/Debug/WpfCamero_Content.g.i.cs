@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("etoile%20logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("btn_lancer_partie.png")]
 
 

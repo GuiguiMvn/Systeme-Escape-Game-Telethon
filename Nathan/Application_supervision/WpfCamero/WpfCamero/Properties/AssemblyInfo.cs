@@ -8,9 +8,9 @@ using System.Windows;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("WpfCamero")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Application de supervision pour l'Escape Game du Téléthon de Saint Colomban")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Saint Félix - La Salle")]
 [assembly: AssemblyProduct("WpfCamero")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
