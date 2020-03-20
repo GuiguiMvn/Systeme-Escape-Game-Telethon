@@ -20,7 +20,12 @@
             </Image.Source>
         </Image>
 
-        <Button x:Name="btnWindow_superviser" Content="Lancer la partie !" HorizontalAlignment="Center" Height="40" Margin="86,343,96,86" VerticalAlignment="Center" Width="210" Click="btnWindow_superviser_Click" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="97" VerticalAlignment="Top" Width="92" Margin="148,303,0,0"  >
+            <Image.Source>
+                <BitmapImage UriSource="btn_Lancer_Partie.PNG"/>
+            </Image.Source>
+        </Image>
+        <Button x:Name="btnWindow_superviser" Content="Lancer la partie !" HorizontalAlignment="Center" Height="79" Margin="148,311,159,79" VerticalAlignment="Center" Width="85" Click="btnWindow_superviser_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18" FontFamily="Century Gothic" Foreground="{x:Null}" FontWeight="Bold" Opacity="0"/>
 
     </Grid>
 </Window>
