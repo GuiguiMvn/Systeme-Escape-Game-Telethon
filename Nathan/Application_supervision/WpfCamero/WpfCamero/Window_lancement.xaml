@@ -14,11 +14,13 @@
             </Image.Source>
         </Image>
 
-        <Image HorizontalAlignment="Left" Height="59" Margin="0,410,0,0" VerticalAlignment="Top" Width="392" >
+        <Image HorizontalAlignment="Left" Height="59" Margin="0,400,0,0" VerticalAlignment="Top" Width="392" >
             <Image.Source>
                 <BitmapImage UriSource="Window envoi d'indice (pied de page).PNG" />
             </Image.Source>
         </Image>
+
+        <Button x:Name="btnWindow_superviser" Content="Lancer la partie !" HorizontalAlignment="Center" Height="40" Margin="86,343,96,86" VerticalAlignment="Center" Width="210" Click="btnWindow_superviser_Click" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold"/>
 
     </Grid>
 </Window>

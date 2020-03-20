@@ -23,5 +23,11 @@ namespace WpfCamero
         {
             InitializeComponent();
         }
+
+        private void btnWindow_superviser_Click(object sender, EventArgs e)
+        {
+            MainWindow Fen = new MainWindow();
+            Fen.ShowDialog();
+        }
     }
 }
