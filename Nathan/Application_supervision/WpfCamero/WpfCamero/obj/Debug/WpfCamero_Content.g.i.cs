@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("btn_lancer_partie.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logo%20telethon_st-f%c3%a9lix%20(1).ico")]
 
 

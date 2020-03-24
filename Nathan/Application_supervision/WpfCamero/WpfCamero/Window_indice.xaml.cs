@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.IO.Ports;
+using MySql.Data.MySqlClient;
 
 namespace WpfCamero
 {

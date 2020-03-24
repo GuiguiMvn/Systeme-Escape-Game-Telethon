@@ -1,0 +1,1 @@
+http://blog.mounier-logiciels.fr/comment-creer-une-connection-mysql-local-en-CSharp.html

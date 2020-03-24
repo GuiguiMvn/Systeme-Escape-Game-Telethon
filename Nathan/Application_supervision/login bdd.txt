@@ -1,0 +1,3 @@
+database : dbsupervision
+login : superviseur
+password : Nantes44
