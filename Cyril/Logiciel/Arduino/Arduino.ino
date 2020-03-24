@@ -25,32 +25,11 @@ Keypad kpd = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS); //
 
 void setup()
 {
-  pinMode(red, OUTPUT);
-  pinMode(green, OUTPUT);
+
  
   kpd.addEventListener(kpdEvent);
 }
 
-void loop()
-{
-  char Key = kpd.getKey();
-  // en cas d'intrus détecté :
-  if(intruder == true && alarm == true)
-  {
-    unsigned long currentMillis = millis();
-    // ... on regarde s'il est temps de faire clignoter la LED, c'est-à-dire
-    // s'il s'est passé suffisamment de temps depuis la dernière fois qu'on a vérifié
-    if(currentMillis - previousMillis > interval)
-    {
-      previousMillis = currentMillis;
-      digitalWrite(red, !digitalRead(red));
-    }
-  }
-  else
-  {
-    digitalWrite(red, LOW);
-  }
-}
 
 void kpdEvent (KeypadEvent Key)
 {
