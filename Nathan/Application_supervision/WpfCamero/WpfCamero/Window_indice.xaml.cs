@@ -37,7 +37,7 @@ namespace WpfCamero
 
             // Créer d'un contact à ajouter
             Indice indice = new Indice();
-            indice.Id = 1;
+           // indice.Id = ; En commentaire car l'id est autoincrémenté.
             indice.Text = "Allez vers l'est...";
             
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
@@ -48,7 +48,7 @@ namespace WpfCamero
 
     public class Indice
     {
-        // Création de 2 propriétés identifiant et texte
+        // Création de 2 propriétés identifiant et texte (de l'indice).
         public int Id { get; set; }
         public string Text { get; set; }
 
@@ -76,7 +76,7 @@ namespace WpfCamero
             this.connection = new MySqlConnection(connectionString);
         }
 
-        // Méthode pour ajouter un contact
+        // Méthode pour ajouter un indice :
         public void AddIndice(Indice indice)
         {
             try
@@ -90,7 +90,7 @@ namespace WpfCamero
                 // Requête SQL
                 cmd.CommandText = "INSERT INTO tbindice (id, text) VALUES (@id, @text)";
 
-                // utilisation de l'objet contact passé en paramètre
+                // Utilisation de l'objet contact passé en paramètre
                 cmd.Parameters.AddWithValue("@id", indice.Id);
                 cmd.Parameters.AddWithValue("@text", indice.Text);
 
