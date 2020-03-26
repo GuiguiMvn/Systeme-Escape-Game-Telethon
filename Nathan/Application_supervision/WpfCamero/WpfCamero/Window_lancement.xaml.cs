@@ -35,18 +35,11 @@ namespace WpfCamero
         {
             InitializeComponent();
 
-            string DateString = System.DateTime.Now.ToShortDateString();
-            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
-            DateTime date_actuelle = DateTime.ParseExact(DateString, "yyyy-MM-dd", culture);
-
             // Créer d'une équipe à ajouter
             Equipe equipe= new Equipe();
             // equipe.Id = ; En commentaire car l'id est autoincrémenté.
             equipe.Nom = "Info44";
             equipe.Score = "1234567890";
-           // equipe.Date = System.DateTime.Now.ToShortDateString();
-            equipe.Date = date_actuelle.ToShortDateString();
-            equipe.Heure_debut = "00:00:00";
             equipe.Heure_fin = "00:00:00";
 
             
@@ -108,14 +101,12 @@ namespace WpfCamero
                     MySqlCommand cmd = this.connection.CreateCommand();
 
                     // Requête SQL
-                    cmd.CommandText = "INSERT INTO tbequipe (id, nom, score, date, heure_debut, heure_fin) VALUES (@id, @nom, @score, @date, @heure_debut, @heure_fin)";
+                    cmd.CommandText = "INSERT INTO tbequipe (id, nom, score, date, heure_debut, heure_fin) VALUES (@id, @nom, @score, NOW(), NOW(), @heure_fin)";
 
                     // Utilisation de l'objet contact passé en paramètre
                     cmd.Parameters.AddWithValue("@id", equipe.Id);
                     cmd.Parameters.AddWithValue("@nom", equipe.Nom);
                     cmd.Parameters.AddWithValue("@score", equipe.Score);
-                    cmd.Parameters.AddWithValue("@date", equipe.Date);
-                    cmd.Parameters.AddWithValue("@heure_debut", equipe.Heure_debut);
                     cmd.Parameters.AddWithValue("@heure_fin", equipe.Heure_fin);
 
 
