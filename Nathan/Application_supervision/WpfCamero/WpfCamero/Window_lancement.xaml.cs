@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+// Librairies de prise en charge d'entrées/sorties pour l'envoi de la trame à l'afficheur.
+using System.IO;
+using System.IO.Ports;
+
 // Librairie MySQL ajoutée dans les références.
 using MySql.Data.MySqlClient;
 
@@ -31,15 +35,21 @@ namespace WpfCamero
         {
             InitializeComponent();
 
-            // Créer d'un contact à ajouter
-            Equipe equipe= new Equipe();
-            // indice.Id = ; En commentaire car l'id est autoincrémenté.
-            equipe.Nom = "Info44";
-            equipe.Score = "123456";
-            equipe.Date = System.DateTime.Now.ToShortDateString();
-            //equipe.Heure_debut = "00:00:00";
-         //   equipe.Heure_fin = "00:00:00";
+            string DateString = System.DateTime.Now.ToShortDateString();
+            IFormatProvider culture = new System.Globalization.CultureInfo("en-US", true);
+            DateTime date_actuelle = DateTime.ParseExact(DateString, "yyyy-MM-dd", culture);
 
+            // Créer d'une équipe à ajouter
+            Equipe equipe= new Equipe();
+            // equipe.Id = ; En commentaire car l'id est autoincrémenté.
+            equipe.Nom = "Info44";
+            equipe.Score = "1234567890";
+           // equipe.Date = System.DateTime.Now.ToShortDateString();
+            equipe.Date = date_actuelle.ToShortDateString();
+            equipe.Heure_debut = "00:00:00";
+            equipe.Heure_fin = "00:00:00";
+
+            
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
@@ -48,8 +58,8 @@ namespace WpfCamero
 
         private void btnWindow_superviser_Click(object sender, EventArgs e)
         {
-            MainWindow Fen = new MainWindow();
-            Fen.ShowDialog();
+            MainWindow FenSuperviser = new MainWindow();
+            FenSuperviser.ShowDialog();
         }
 
         public class Equipe
