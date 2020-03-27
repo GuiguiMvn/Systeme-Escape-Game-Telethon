@@ -43,9 +43,8 @@ namespace WpfCamero
 
             // Créer une équipe à ajouter
             Equipe equipe = new Equipe();
-            //equipe.Nom = "Info44";
             equipe.Nom = TxtBoxEquipe.Text;
-            equipe.Score = "1234567890";
+            equipe.Score = "0000";
             equipe.Heure_fin = "00:00:00";
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL

@@ -37,8 +37,7 @@ namespace WpfCamero
 
             // Créer d'un contact à ajouter
             Indice indice = new Indice();
-           // indice.Id = ; En commentaire car l'id est autoincrémenté.
-            indice.Text = "Allez vers l'est...";
+            indice.Text = "Allez vers l'ouest...";
             
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
