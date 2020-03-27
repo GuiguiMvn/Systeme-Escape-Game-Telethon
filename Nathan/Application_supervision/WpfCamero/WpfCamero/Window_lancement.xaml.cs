@@ -34,25 +34,23 @@ namespace WpfCamero
         public Window_lancement()
         {
             InitializeComponent();
-
-            // Créer d'une équipe à ajouter
-            Equipe equipe= new Equipe();
-            // equipe.Id = ; En commentaire car l'id est autoincrémenté.
-            equipe.Nom = "Info44";
-            equipe.Score = "1234567890";
-            equipe.Heure_fin = "00:00:00";
-
-            
-
-            // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
-            Bdd bdd = new Bdd();
-            bdd.AddEquipe(equipe);
         }
 
         private void btnWindow_superviser_Click(object sender, EventArgs e)
         {
             MainWindow FenSuperviser = new MainWindow();
             FenSuperviser.ShowDialog();
+
+            // Créer une équipe à ajouter
+            Equipe equipe = new Equipe();
+            //equipe.Nom = "Info44";
+            equipe.Nom = TxtBoxEquipe.Text;
+            equipe.Score = "1234567890";
+            equipe.Heure_fin = "00:00:00";
+
+            // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
+            Bdd bdd = new Bdd();
+            bdd.AddEquipe(equipe);
         }
 
         public class Equipe
@@ -89,7 +87,7 @@ namespace WpfCamero
                 this.connection = new MySqlConnection(connectionString);
             }
 
-            // Méthode pour ajouter un indice :
+            // Méthode pour ajouter une équipe :
             public void AddEquipe(Equipe equipe)
             {
                 try
