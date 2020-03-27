@@ -10,9 +10,9 @@
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
-        <WebBrowser x:Name="wbDLink" Source="http://stfelixlasalle.fr" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
+        <WebBrowser x:Name="wbDLink" Source="http://www.google.fr" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
-        <Label x:Name="lblTime" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25"/>
+
         <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
             <Image.Source>
                 <BitmapImage UriSource="ligne violette avec logo.png" />
@@ -43,6 +43,11 @@
         <Rectangle Fill="#FFFFFFBA" HorizontalAlignment="Left" Height="65" Margin="-280,312,0,0" Stroke="Black" VerticalAlignment="Top" Width="240"/>
 
         <Button x:Name="btnWindow_indice" Content="Envoyer un indice" HorizontalAlignment="Center" Height="40" Margin="-264,199,763,189" VerticalAlignment="Center" Width="210" Click="btnWindow_indice_Click" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold"/>
+       
+        <TextBox x:Name ="hour" HorizontalAlignment="Left" Height="30" Margin="-153,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="31" FontSize="20" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name ="minute" HorizontalAlignment="Left" Height="30" Margin="-109,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="31" FontSize="20" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name ="second" HorizontalAlignment="Left" Height="30" Margin="-64,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" FontSize="20" TextChanged="TextBox_TextChanged" UndoLimit="104" AutomationProperties.Name="second"/>
+        <Label x:Name="lblTime" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="232"/>
 
     </Grid>
 
