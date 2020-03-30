@@ -24,37 +24,46 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer timer;
+        private int time = 15;
+        private DispatcherTimer timercam;
+        private DispatcherTimer timerchrono;
 
         public MainWindow()
         {
             InitializeComponent();
 
             // Fonction de rafraichissement de l'image de la caméra IP :
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start(); 
+            timercam = new DispatcherTimer();
+            timercam.Interval = TimeSpan.FromSeconds(1);
+            timercam.Tick += timercam_Tick;
+            timercam.Start();
+
+            //Fonction du chronometre :
+            timerchrono = new DispatcherTimer();
+            timerchrono.Interval = new TimeSpan(0, 0, 1);
+            timerchrono.Tick += timerchrono_Tick;
+            timerchrono.Start();
         }
 
-            void timer_Tick(object sender, EventArgs e)
-            {
-                lblTime.Content = DateTime.Now.ToLongTimeString();
-                wbDLink.Refresh();
-            } 
-
-        private void timer1_Tick(object sender, EventArgs e)
+        void timercam_Tick(object sender, EventArgs e)
         {
-            int secondInt = Convert.ToInt32(second.Text);
-            if (secondInt < 59)
+             lblTime.Content = DateTime.Now.ToLongTimeString();
+             wbDLink.Refresh();
+        } 
+
+        void timerchrono_Tick(object sender, EventArgs e)
+        {
+            if (time>0)
             {
-                second.Text = Convert.ToString(secondInt + 1);
+                time--;
+                TBCountDown.Text = string.Format("00:0{0}:{1}", time / 60, time % 60);            
             }
             else
             {
-                second.Text = "0";
+                timerchrono.Stop();
             }
         }
+
 
         // Action du clic sur l'option d'envoyer un indice :
         private void btnWindow_indice_Click(object sender, EventArgs e)

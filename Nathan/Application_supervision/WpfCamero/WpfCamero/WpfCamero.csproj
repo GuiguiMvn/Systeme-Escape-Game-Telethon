@@ -62,11 +62,13 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\Connector_MYSQL\mysql-connector.net\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SQL\Connector_MYSQL\mysql-connector.net\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Web">
-      <HintPath>..\..\Connector_MYSQL\mysql-connector.net\MySql.Web.dll</HintPath>
+    <Reference Include="MySql.Web, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SQL\Connector_MYSQL\mysql-connector.net\MySql.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
