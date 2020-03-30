@@ -28,11 +28,6 @@
                 <BitmapImage UriSource="logo-telethon-2.PNG"/>
             </Image.Source>
         </Image>
-        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="711" Margin="-1,-50,-1,0" >
-            <Image.Source>
-                <BitmapImage UriSource="Ligne_camera.PNG"/>
-            </Image.Source>
-        </Image>
         <Image HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="60" Margin="-280,-133,0,0" >
             <Image.Source>
                 <BitmapImage UriSource="etoile logo.PNG"/>
@@ -46,6 +41,11 @@
         <Label x:Name="lblTime" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="232"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="43" Margin="-163,-15,0,0" Stroke="#FFF137E9" VerticalAlignment="Top" Width="157" StrokeThickness="2"/>
         <TextBlock x:Name="TBCountDown" Text ="00:00:00" TextAlignment="Center" FontSize="35" Margin="-158,-21,713,397" FontFamily="Yu Gothic Medium" TextDecorations="{x:Null}" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="711" Margin="0,-50,-2,0" >
+            <Image.Source>
+                <BitmapImage UriSource="Ligne_camera.PNG"/>
+            </Image.Source>
+        </Image>
 
     </Grid>
 

@@ -12,10 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+// Librairie MySQL ajoutée dans les références.
+using MySql.Data.MySqlClient;
+using System.IO;
+using System.IO.Ports;
+
 namespace WpfCamero
 {
     /// <summary>
-    /// Logique d'interaction pour Window1.xaml
+    /// Logique d'interaction pour Window_fin.xaml
     /// </summary>
     public partial class Window_fin : Window
     {
