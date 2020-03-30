@@ -34,3 +34,5 @@ C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.CopyComplete
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\bin\Debug\MySql.Data.dll
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\bin\Debug\MySql.Web.dll
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_fin.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_fin.baml
