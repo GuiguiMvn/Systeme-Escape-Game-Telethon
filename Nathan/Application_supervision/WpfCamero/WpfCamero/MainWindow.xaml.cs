@@ -24,7 +24,7 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 3540;
+        private int time = 15; //1h = 3540s
         private DispatcherTimer timercam;
         private DispatcherTimer timerchrono;
 
@@ -61,6 +61,8 @@ namespace WpfCamero
             else
             {
                 timerchrono.Stop();
+                Window_fin Fen = new Window_fin();
+                Fen.ShowDialog();
             }
         }
 
