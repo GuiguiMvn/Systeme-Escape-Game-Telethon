@@ -24,7 +24,7 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 15;
+        private int time = 3540;
         private DispatcherTimer timercam;
         private DispatcherTimer timerchrono;
 
@@ -56,7 +56,7 @@ namespace WpfCamero
             if (time>0)
             {
                 time--;
-                TBCountDown.Text = string.Format("00:0{0}:{1}", time / 60, time % 60);            
+                TBCountDown.Text = string.Format("00:{00}:{1}", time / 60, time % 60);            
             }
             else
             {
