@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 30 mars 2020 à 08:49
+-- Généré le :  lun. 30 mars 2020 à 13:49
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -32,24 +32,25 @@ USE `projet_telethon`;
 
 DROP TABLE IF EXISTS `creneaux`;
 CREATE TABLE IF NOT EXISTS `creneaux` (
+  `idcreneaux` int(10) NOT NULL AUTO_INCREMENT,
   `Date` date NOT NULL,
   `NB_joueurs` int(11) NOT NULL,
   `Nom_joueur` varchar(45) NOT NULL,
   `Num_joueur` varchar(45) NOT NULL,
-  `idcreneaux` int(100) NOT NULL AUTO_INCREMENT,
   `Time` time NOT NULL,
   `Statut` tinyint(1) NOT NULL DEFAULT '1' COMMENT ' 1=Active, 0=Block ',
   `roles_id` int(11) NOT NULL,
-  PRIMARY KEY (`idcreneaux`)
+  PRIMARY KEY (`idcreneaux`),
+  KEY `fk_creneaux_roles1` (`roles_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `creneaux`
 --
 
-INSERT INTO `creneaux` (`Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `idcreneaux`, `Time`, `Statut`, `roles_id`) VALUES
-('2020-03-27', 3, 'DOHIN', '0670449615', 1, '00:00:00', 0, 0),
-('2020-03-09', 3, 'ggggg', '0652525252', 2, '19:13:00', 0, 0);
+INSERT INTO `creneaux` (`idcreneaux`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `Time`, `Statut`, `roles_id`) VALUES
+(1, '2020-03-27', 3, 'DOHIN', '0670449615', '00:00:00', 0, 0),
+(2, '2020-03-09', 3, 'ggggg', '0652525252', '19:13:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -84,17 +85,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `role_id` int(2) NOT NULL,
+  `roles_id` int(2) NOT NULL,
   `name` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_users_roles` (`roles_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `role_id`, `name`) VALUES
-(1, 'admin', 'admin', 1, ''),
+INSERT INTO `users` (`id`, `login`, `password`, `roles_id`, `name`) VALUES
 (2, 'superviseur', 'superviseur', 2, '');
 COMMIT;
 
