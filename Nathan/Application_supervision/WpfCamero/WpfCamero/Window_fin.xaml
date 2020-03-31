@@ -13,12 +13,13 @@
                 <BitmapImage UriSource="Window fin partie.PNG" />
             </Image.Source>
         </Image>
-        
+
         <Image HorizontalAlignment="Left" Height="59" Margin="0,405,0,0" VerticalAlignment="Top" Width="392" >
             <Image.Source>
                 <BitmapImage UriSource="Window envoi d'indice (pied de page).PNG" />
             </Image.Source>
         </Image>
+        <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="34" Margin="44,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="160"/>
 
     </Grid>
 </Window>

@@ -35,7 +35,7 @@ namespace WpfCamero
 
             // Créer une équipe à ajouter
             Equipe equipe = new Equipe();
-        
+            equipe.Score = "1234";
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
@@ -108,6 +108,39 @@ namespace WpfCamero
                     // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
                 }
             }
+
+            public void MAJScore(Equipe equipe)
+            {
+                try
+                {
+                    // Ouverture de la connexion SQL
+                    this.connection.Open();
+
+                    // Création d'une commande SQL en fonction de l'objet connection
+                    MySqlCommand cmd = this.connection.CreateCommand();
+
+                    // Requête SQL
+                    //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
+                    cmd.CommandText = "UPDATE tbequipe SET score = @score WHERE id=(SELECT MAX(id)) ORDER BY id DESC LIMIT 1";
+                   
+                    // Utilisation de l'objet contact passé en paramètre
+                    cmd.Parameters.AddWithValue("@score", equipe.Score);
+
+                    // Exécution de la commande SQL
+                    cmd.ExecuteNonQuery();
+
+                    // Fermeture de la connexion
+                    this.connection.Close();
+                }
+                catch
+                {
+                    // Gestion des erreurs :
+                    // Possibilité de créer un Logger pour les exceptions SQL reçus
+                    // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
+                }
+            }
+
         }
+
     }
 }
