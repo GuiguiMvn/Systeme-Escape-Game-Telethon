@@ -38,8 +38,6 @@ namespace WpfCamero
 
         private void btnWindow_superviser_Click(object sender, EventArgs e)
         {
-            MainWindow FenSuperviser = new MainWindow();
-            FenSuperviser.ShowDialog();
 
             // Créer une équipe à ajouter
             Equipe equipe = new Equipe();
@@ -50,6 +48,9 @@ namespace WpfCamero
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
             bdd.AddEquipe(equipe);
+
+            MainWindow FenSuperviser = new MainWindow();
+            FenSuperviser.ShowDialog();
         }
 
         public class Equipe
