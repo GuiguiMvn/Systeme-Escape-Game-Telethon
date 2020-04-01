@@ -1,5 +1,5 @@
 <html lang="fr" class="translated-ltr" ><head>
-<title>Contactez V7</title>
+<title>Ajout superviseur</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,18 +28,18 @@
 <body>
 <div class="container-contact100">
 <div class="wrap-contact100">
-<form class="contact100-form validate-form" action="Ajout_superviseur.php" method="post" >
+    <form class="contact100-form validate-form" action="Ajout_superviseur.php" method="post" >
 <span class="contact100-form-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 Ajouter superviseur
 </font></font></span>
 <div class="wrap-input100 validate-input" data-validate="Name is required">
-<input class="input100" id="name" type="text" name="nom_utilisateur" placeholder="Nom d'utilisateur">
+<input class="input100" id="name" type="text" name="login" placeholder="Nom d'utilisateur">
 <label class="label-input100" for="name">
 <span class="lnr lnr-user"></span>
 </label>
 </div>
 <div class="wrap-input100 validate-input" data-validate="Password is required">
-<input class="input100" id="email" type="password" name="mot_de_passe" placeholder="mot de passe">
+<input class="input100" id="email" type="password" name="password" placeholder="mot de passe">
 <label class="label-input100" for="email">
 <span class="lnr lnr-envelope"></span>
 </label>
@@ -49,7 +49,7 @@ Ajouter superviseur
 <div class="wrap-contact100-form-btn">
 <div class="contact100-form-bgbtn"></div>
 <button class="contact100-form-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-Envoyer un e-mail
+Ajouter
 </font></font></button>
 </div>
 </div>

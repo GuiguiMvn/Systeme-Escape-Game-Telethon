@@ -1,3 +1,4 @@
+          
 
 <html lang="fr" class="translated-ltr"><head>
 	<title>Espcace Membre connexion</title>
@@ -30,7 +31,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w" action="verification.php" method="POST">
+                            <form class="login100-form validate-form flex-sb flex-w" action="verification.php" method="POST">
 					<span class="login100-form-title p-b-32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                Espace Membre
 					 </font></font></span>
@@ -39,7 +40,7 @@
 						Nom d' </font><font style="vertical-align: inherit;">utilisateur
 					</font></font></span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
-                                            <input class="input100" type="text" name="username" required>
+                                            <input class="input100" type="text" name="login" required>
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -71,7 +72,7 @@
 					</div>
                    
                                     <div class="container-login100-form-btn"> 
-						<button class="login100-form-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+						<button class="login100-form-btn" name="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 							S'identifier
 						</font></font></button>
                                         
@@ -79,14 +80,7 @@
                                             
                  </div>
                                     
-              <?php
-                  
-if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>               
+    
 			
 		</form>
 			</div>

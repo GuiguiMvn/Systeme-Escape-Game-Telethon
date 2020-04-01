@@ -1,27 +1,37 @@
-<?php
-// on se connecte à notre base
-  $db_username = 'root';
-    $db_password = '';
-    $db_name     = 'projet_telethon';
-    $db_host     = 'localhost';
-    $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
-           or die('could not connect to database');
-?>
-<html>
-<head>
-<title>Gestion des comptes superviseurs</title>
-</head>
-<body>
-<?php
-// lancement de la requête
-$sql ='DELETE administrateur SET adresse="3, rue des tulipes", age="65" WHERE nom="toto"';
+<?php ob_start();
 
-// on exécute la requête (mysql_query) et on affiche un message au cas où la requête ne se passait pas bien (or die)
-mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
+    $Titre = "la liste des creneaux";
+    ?>
+<?php
+    $content = ob_get_clean();
+    ?>
 
-// on ferme la connexion à la base
-mysql_close();
+<?php
+$pdo = new PDO("mysql:dbname=projet_telethon;host=localhost", "root", "");
+
+$stmt = $pdo->prepare("SELECT id, Statut, Date, Time FROM creneaux ORDER BY id");
+$stmt->execute();
+$types = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+if (isset($_GET['supprimer'])){
+    $stmt = $pdo->prepare("DELETE FROM creneaux WHERE id = :montype");
+    $stmt->bindValue(":montype", $_GET['supprimer'], PDO::PARAM_INT);
+    $stmt->execute();
+} 
+
+ 
+ if (isset($_POST['superviseurs'])){
+    $stmt = $pdo->prepare("UPDATE creaneaux set Statut = :monLibelle, Date = :st_date, Time = :Time WHERE id = :montype");
+    $stmt->bindValue(":montype", $_POST['id'], PDO::PARAM_INT);
+    $stmt->bindValue(":monLibelle", $_POST['Statut'], PDO::PARAM_STR);
+    $stmt->bindValue(":Date", $_POST['Date'], PDO::PARAM_STR);
+    $stmt->bindValue(":Time", $_POST['Time'], PDO::PARAM_STR);
+    $stmt->execute();
+} 
+
+
 ?>
-L'adresse et l'age de Benoît viennent d'être modifiés.
-</body>
-</html>
+
+
+
