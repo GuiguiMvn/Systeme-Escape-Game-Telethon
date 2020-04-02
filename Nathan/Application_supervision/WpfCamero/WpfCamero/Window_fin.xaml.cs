@@ -40,6 +40,7 @@ namespace WpfCamero
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
             bdd.AddEquipe(equipe);
+            bdd.MAJScore(equipe);
         }
 
         public class Equipe
