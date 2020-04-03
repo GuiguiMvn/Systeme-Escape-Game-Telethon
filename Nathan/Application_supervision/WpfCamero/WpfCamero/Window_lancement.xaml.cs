@@ -57,6 +57,7 @@ namespace WpfCamero
         {
             // Création de 2 propriétés identifiant et texte (de l'indice).
             public int Id { get; set; }
+
             public string Nom { get; set; }
             public string Score { get; set; }
             public string Date { get; set; }

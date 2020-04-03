@@ -89,8 +89,8 @@ namespace WpfCamero
                     MySqlCommand cmd = this.connection.CreateCommand();
 
                     // Requête SQL
-                    //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
-                    cmd.CommandText = "UPDATE tbequipe SET heure_fin = NOW() WHERE id=(SELECT MAX(id)) ORDER BY id DESC LIMIT 1";
+                    //Permet de mettre à jour l'heure de fin de la table tbequipe avec la dernière date triée par ordre décroissant et limiter à 1 résultat. 
+                    cmd.CommandText = "UPDATE tbequipe SET heure_fin = NOW() WHERE date=(SELECT MAX(date)) ORDER BY date DESC LIMIT 1";
 
                     //La commande suivante permet d'extraire la dernière ligne saisie dans la table équipe (id décroissant):
                     //SELECT id, nom, score, date, heure_debut, heure_fin FROM tbequipe WHERE id=(SELECT MAX(id) FROM tbequipe) 
