@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.IO.Ports;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace WpfCamero
 {
@@ -39,8 +42,24 @@ namespace WpfCamero
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
-            bdd.AddEquipe(equipe);
+            bdd.Fin_Equipe(equipe);
             bdd.MAJScore(equipe);
+
+
+            /*DataSet ds = new DataSet();
+            SqlDataAdapter da = dbprovider.CreateDataAdapter();
+            da.SelectCommand = Commandpath;
+            da.Fill(ds);*/
+
+            // Assumes that connection is a valid SqlConnection object.  
+            string queryString =
+              "SELECT * FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
+            SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
+
+            DataSet dataSet = new DataSet("TblEquipe");
+            adapter.Fill(dataSet);
+
+
         }
 
         public class Equipe
@@ -78,7 +97,7 @@ namespace WpfCamero
             }
 
             // Méthode pour ajouter une équipe :
-            public void AddEquipe(Equipe equipe)
+            public void Fin_Equipe(Equipe equipe)
             {
                 try
                 {
@@ -122,7 +141,7 @@ namespace WpfCamero
 
                     // Requête SQL
                     //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
-                    cmd.CommandText = "UPDATE tbequipe SET score = @score WHERE id=(SELECT MAX(id)) ORDER BY id DESC LIMIT 1";
+                    cmd.CommandText = "UPDATE tbequipe SET score = @score WHERE date=(SELECT MAX(date)) ORDER BY date DESC LIMIT 1";
                    
                     // Utilisation de l'objet contact passé en paramètre
                     cmd.Parameters.AddWithValue("@score", equipe.Score);
@@ -141,7 +160,31 @@ namespace WpfCamero
                 }
             }
 
+            public void Lister_Equipe(Equipe equipe)
+            {
+                                
+                    // Ouverture de la connexion SQL
+                    this.connection.Open();
+
+                    // Création d'une commande SQL en fonction de l'objet connection
+                    MySqlCommand cmd = this.connection.CreateCommand();
+
+                    // Requête SQL
+                    //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
+                    cmd.CommandText = "SELECT * FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
+
+                    // Exécution de la commande SQL
+                    cmd.ExecuteNonQuery();
+
+                    // Fermeture de la connexion
+                    this.connection.Close();
+            }
+
+
+
         }
+
+
 
     }
 }
