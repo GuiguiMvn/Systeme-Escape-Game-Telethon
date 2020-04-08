@@ -40,7 +40,7 @@ namespace WpfCamero
         private void btn_Envoyer_indice_Click(object sender, RoutedEventArgs e)
         {
             Indice indice = new Indice();
-            indice.Text = txtIndice.ToString();
+            indice.Text = txtIndice.Text;
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
         }
