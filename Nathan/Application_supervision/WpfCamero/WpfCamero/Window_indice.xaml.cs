@@ -34,12 +34,13 @@ namespace WpfCamero
         public Window_indice()
         {
             InitializeComponent();
-
-            // Créer d'un contact à ajouter
-            Indice indice = new Indice();
-            indice.Text = "Allez vers l'ouest...";
             
-            // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
+        }
+
+        private void btn_Envoyer_indice_Click(object sender, RoutedEventArgs e)
+        {
+            Indice indice = new Indice();
+            indice.Text = txtIndice.ToString();
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
         }

@@ -19,6 +19,8 @@
                 <BitmapImage UriSource="Window envoi d'indice (pied de page).PNG" />
             </Image.Source>
         </Image>
+        <Button x:Name="btn_Envoyer_indice" Click ="btn_Envoyer_indice_Click" Content="Afficher l'indice" HorizontalAlignment="Left" Margin="125,279,0,0" VerticalAlignment="Top" Width="121"/>
+        <TextBox x:Name="txtIndice" HorizontalAlignment="Left" Height="23" Margin="168,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

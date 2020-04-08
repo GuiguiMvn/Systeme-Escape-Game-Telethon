@@ -51,14 +51,14 @@ namespace WpfCamero
             da.SelectCommand = Commandpath;
             da.Fill(ds);*/
 
-            // Assumes that connection is a valid SqlConnection object.  
+           /* // Assumes that connection is a valid SqlConnection object.  
             string queryString =
               "SELECT * FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
             SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
 
             DataSet dataSet = new DataSet("TblEquipe");
             adapter.Fill(dataSet);
-
+            */
 
         }
 
