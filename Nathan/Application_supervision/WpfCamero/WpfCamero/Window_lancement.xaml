@@ -29,7 +29,9 @@
         <TextBox x:Name ="TxtBoxEquipe" HorizontalAlignment="Left" Height="27" Margin="162,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Background="#FFFFF3BF" BorderBrush="#FFE804FF"/>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="27,126,0,0" TextWrapping="Wrap" Text="Nom de l'équipe :" VerticalAlignment="Top" Width="126" FontSize="14" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Background="#FFF7F5BB" TextAlignment="Center"/>
 
-        <Button x:Name="btnWindow_superviser" Content="Lancer la partie !" HorizontalAlignment="Center" Height="79" Margin="148,311,159,79" VerticalAlignment="Center" Width="85" Click="btnWindow_superviser_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18" FontFamily="Century Gothic" Foreground="{x:Null}" FontWeight="Bold" Opacity="0"/>
+        <Button x:Name="btnWindow_superviser" HorizontalAlignment="Center" Height="79" Margin="148,311,159,79" VerticalAlignment="Center" Width="85" Click="btnWindow_superviser_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18" FontFamily="Century Gothic" Foreground="{x:Null}" FontWeight="Bold" Opacity="0">
+            <DataGrid Height="100" Width="100"/>
+        </Button>
 
 
     </Grid>
