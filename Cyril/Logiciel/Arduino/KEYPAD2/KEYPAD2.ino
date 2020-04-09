@@ -1,40 +1,30 @@
+#include <Keypad.h>
 
-#include <Keypad.h>                      // appel de la bibliothèque
-
-#define L1 2                                    // affectation des broches
-#define L2 3
-#define L3 4
-#define L4 5
-#define C1 6
-#define C2 7
-#define C3 8
-
-const byte lignes = 4;                    // 4 lignes
-const byte colonnes = 3;               // 3 colonnes
-
-char code[lignes][colonnes] = {   // code des touches
-  {'1','2','3'},
-  {'4','5','6'},
-  {'7','8','9'},
-  {'*','0','#'}
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //three columns
+char keys[ROWS][COLS] = {
+  {'1','1','2','3'},
+  {'4','4','5','6'},
+  {'7','7','8','9'},
+  {'*','*','0','#'}
 };
+byte rowPins[ROWS] = {11, 10, 9, 8}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {4, 7, 6, 5}; //connect to the column pinouts of the keypad
 
-byte broches_lignes[lignes] = {L1, L2, L3, L4};                   // connexion des lignes
-byte broches_colonnes[colonnes] = {C1, C2, C3};              // connexion des colonnes
+//byte rowPins[ROWS] = {2, 7, 6, 4}; //connect to the row pinouts of the keypad
+//byte colPins[COLS] = {3, 1, 5}; //connect to the column pinouts of the keypad
 
-Keypad clavier = Keypad( makeKeymap(code), broches_lignes, broches_colonnes, lignes, colonnes);              // création de l'objet clavier
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+    
 
-void setup()
-{
-  Serial.begin(9600);                     // initialisation du moniteur série
+void setup(){
+  Serial.begin(9600);
+ 
 }
- 
-void loop()
-{
-  int touche = clavier.getKey();          // acquisition de la touche
- 
-  if (touche != NO_KEY)                 // si appui sur une touche
-  {
-    Serial.println(touche);             // affichage du code dans le moniteur série
+
+void loop(){
+  char key = keypad.getKey();
+  if (key){
+    Serial.println(key);
   }
 }
