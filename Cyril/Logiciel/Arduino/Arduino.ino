@@ -1,72 +1,98 @@
-#include <Password.h> // http://www.arduino.cc/playground/uploads/Code/Password.zip
-#include <Keypad.h>   // http://www.arduino.cc/playground/uploads/Code/keypad.zip
+// constantes de fréquences
+#define DON 33
+#define REB 35
+#define REN 37
+#define MIB 39
+#define MIN 41
+#define FAN 44
+#define SOB 46
+#define SON 49
+#define LAB 52
+#define LAN 55
+#define SIB 58
+#define SIN 62
 
-
-Password pwd = Password("1234");   // définition du mot de passe
-
-boolean alarm = false;             // variable stockant l'état de l'alarme
-                                   // false = alarme OFF | true = alarme ON
-boolean intruder = false;          // variable stockant l'état de l'intrusion
-                                   // false = pas d'intrus détecté | true = intrus détecté
-
-#define ROWS 4                                                       //
-#define COLS 3                                                       //
-char keys[ROWS][COLS] =                                              //
-{                                                                    //
-  {'1','2','3'},                                                     //
-  {'4','5','6'},                                                     // configuration
-  {'7','8','9'},                                                     // du clavier
-  {'*','0','#'}                                                      //
-};                                                                   //
-byte rowPins[ROWS] = {8, 7, 6, 5};                                   //
-byte colPins[COLS] = {4, 3, 2};                                      //
-                                                                     //
-Keypad kpd = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS); //
-
-void setup()
-{
-
- 
-  kpd.addEventListener(kpdEvent);
+// tableau pour la mélodie
+int part[50][3] = {
+  DON, 2, 100,
+  DON, 2, 100,
+  DON, 2, 100,
+  LAB, 1, 75,
+  MIB, 2, 25,
+  DON, 2, 100,
+  LAB, 1, 75,
+  MIB, 2, 25,
+  DON, 2, 200,
+  SON, 2, 100,
+  SON, 2, 100,
+  SON, 2, 100,
+  LAB, 2, 75,
+  MIB, 2, 25,
+  SIN, 1, 100,
+  LAB, 1, 75,
+  MIB, 2, 25,
+  DON, 2, 200,
+  DON, 3, 100,
+  DON, 2, 100,
+  DON, 3, 25,
+  SIN, 2, 25,
+  DON, 3, 25,
+  0, 0, 75,
+  SIN, 2, 50,
+  SIB, 2, 100,
+  SIB, 1, 100,
+  SON, 2, 25,
+  SOB, 2, 25,
+  SON, 2, 25,
+  0, 0, 75,
+  SOB, 2, 50,
+  FAN, 2, 100,
+  SON, 1, 100,
+  SIB, 1, 100,
+  SON, 1, 75,
+  MIB, 2, 25,
+  DON, 2, 100,
+  LAB, 1, 75,
+  MIB, 2, 25,
+  DON, 2, 200,
+  -1
+};
+int pinSon = 12; // pin de connection du haut-parleur
+int tempo = 120; // variable du tempo
+int duree = 0; // variable de durée de note
+unsigned long tempsDep; // variable de temps de départ
+int p = 0; // variable de position dans le tableau de mélodie
+void setup() {
+  pinMode(pinSon,OUTPUT); 
+  tempsDep = millis(); // initialisation du temps de départ
 }
 
+void loop() {
+  joue(); // appel de la fonction pour jouer la mélodie
+}
 
-void kpdEvent (KeypadEvent Key)
-{
-  switch (kpd.getState())
-  {
-    case PRESSED :
-      switch (Key)
-      {
-        // appui sur '*' -> vérification de la saisie en cours
-        case '*' : checkPassword(); break;
-        // appui sur '#' -> réinitialisation de la saisie en cours
-        case '#' : pwd.reset(); break;
-        // sinon on ajoute le chiffre à la combinaison
-        default  : pwd.append(Key); break;
+//fonction de lecture de la mélodie
+void joue() {
+  unsigned long tempsAct = millis();
+  if (tempsAct - tempsDep >= duree) {
+    if (part[p][0] != -1) { // test de fin de tableau
+      noTone(pinSon);
+      delay(10); // délai pour l'attaque
+      // la fréquence est calculée en fonction des fréquences de base
+      // et de l'octave définit dans le tableau
+      int frequence = part[p][0] * pow(2, part[p][1] + 1);
+      // la durée de la note est calculée comme en musique
+      duree = 1000 / (tempo / 60) * (float(part[p][2]) / 100);
+      if (frequence > 0) {
+        tone (pinSon, frequence);
       }
-    default : break;
+      p++; //incrémentation de la position dans le tableau
+    }
+    else { 
+      noTone(pinSon);
+      p=0;// retour au début du tableau
+      duree=1000;// attente avant répétition
+    }
+    tempsDep=tempsAct;
   }
-}
-
-void checkPassword(void)
-{
-  // on remet à zéro l'état du mot de passe
-  intruder = false;
-  // si le mot de passe est juste...
-  if (pwd.evaluate())
-  {
-    // ...on met à jour l'état de l'alarme : ON>OFF / OFF>ON
-    alarm = !alarm;
-   
-  }
-  // si le mot de passe est faux...
-  else
- {
-   // ...on signale l'intrusion à la loop() qui déclenche l'alarme
-   // jusqu'à ce que le bon mot de passe soit rentré
-   intruder = true;
- }
- // on remet à zéro systématiquement après avoir vérifié pour ne pas avoir d'erreur
- pwd.reset();
 }
