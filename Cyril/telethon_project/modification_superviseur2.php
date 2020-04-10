@@ -1,6 +1,6 @@
 <?php ob_start();
-
-    $Titre = "la liste des superviseurs";
+     
+    $Titre = "Liste des superviseurs";
     ?>
 <?php
     $content = ob_get_clean();
@@ -15,16 +15,16 @@ $types = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 if (isset($_GET['supprimer'])){
-    $stmt = $pdo->prepare("DELETE FROM users WHERE id = :montype");
-    $stmt->bindValue(":montype", $_GET['supprimer'], PDO::PARAM_INT);
+    $stmt = $pdo->prepare("DELETE FROM users WHERE id = :monid");
+    $stmt->bindValue(":monid", $_GET['supprimer'], PDO::PARAM_INT);
     $stmt->execute();
 } 
 
  
- if (isset($_POST['superviseurs'])){
-    $stmt = $pdo->prepare("UPDATE users set login = :monLibelle, password = :mdp WHERE id = :montype");
-    $stmt->bindValue(":montype", $_POST['superviseurs'], PDO::PARAM_INT);
-    $stmt->bindValue(":monLibelle", $_POST['Nom'], PDO::PARAM_STR);
+ if (isset($_POST['modifier'])){
+    $stmt = $pdo->prepare("UPDATE users set login = :monNom, password = :mdp WHERE id = :monid");
+    $stmt->bindValue(":monid", $_POST['id'], PDO::PARAM_INT);
+    $stmt->bindValue(":monNom", $_POST['Nom'], PDO::PARAM_STR);
     $stmt->bindValue(":mdp", $_POST['Mdp'], PDO::PARAM_STR);
 
     $stmt->execute();

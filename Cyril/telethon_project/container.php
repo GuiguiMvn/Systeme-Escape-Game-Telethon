@@ -1,30 +1,21 @@
 
-<body class="">
-<div role="navigation" class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Menu</a></li>
-						<li><a href="Lieu.php">Lieu</a></li>
-                                                <li><a href="Inscription.php">Inscription</a></li>
-                                                <li><a href="Contact.php">Contact</a></li>
-						<li><a href="login.php">Espace membres</a></li>
+	<link rel="stylesheet" href="assets/css/style.css">  
 
-           
-          </ul>
-         
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+
+
+<header id="header" class="alt">
+				<nav id="nav">
+					<ul>
+                                                <li><a href="index.php">Menu</a></li>
+                                                <li><a href="public/index_1.php">Inscription</a></li>
+                                                <li><a href="maps_contact.php">Contact</a></li>						
+					</ul>
+				</nav>
+			</header>
+
 	
-	<div class="container" style="min-height:500px;">
-	<div class=''>
-	</div>
+
+
+
+
+

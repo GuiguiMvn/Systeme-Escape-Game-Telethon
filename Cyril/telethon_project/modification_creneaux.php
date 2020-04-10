@@ -1,6 +1,6 @@
 <?php ob_start();
 
-    $Titre = "la liste des creneaux";
+    $Titre = "Liste des creneaux";
     ?>
 <?php
     $content = ob_get_clean();

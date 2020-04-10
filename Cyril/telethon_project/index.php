@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+ 
 	<body class="landing">
 
 		<!-- Header -->
@@ -19,10 +20,10 @@
 				<nav id="nav">
 					<ul>
                                                 <li><a href="index.php">Menu</a></li>
-						<li><a href="Lieu.php">Lieu</a></li>
-                                                <li><a href="Inscription.php">Inscription</a></li>
-                                                <li><a href="Contact.php">Contact</a></li>
-						<li><a href="login.php">Espace membres</a></li>
+                                                <li><a href="public/index_1.php">Inscription</a></li>
+                                                <li><a href="maps_contact.php">Contact</a></li>
+						<li><a href="login.php">Espace Admin</a></li>
+                                                <li><a href="login2.php">Espace Superviseur</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -37,8 +38,6 @@
 					<li><a href="#" class="button special big">Inscription</a></li>
 				</ul>
 			</section>
-
-			
 
 
 		<!-- Scripts -->

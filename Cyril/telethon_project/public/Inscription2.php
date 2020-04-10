@@ -4,16 +4,22 @@ $Pdo_Object = new PDO("mysql:host=localhost;dbname=projet_telethon","root","",ar
 
 try {
    //Contrôle de l'éxistance des deux paramètres email et content
-   if(!isset($_POST['Date'])) throw new Exception("Le paramètre Date est absent");
- if(!isset($_POST['Time'])) throw new Exception("Le paramètre Time est absent");
+   if(!isset($_POST['Date'])) throw new Exception("Le paramètre date est absent");
+   if(!isset($_POST['NB_joueurs'])) throw new Exception("Le paramètre nb est absent");
+   if(!isset($_POST['Nom_joueur'])) throw new Exception("Le paramètre nom est absent");
+   if(!isset($_POST['Num_joueur'])) throw new Exception("Le paramètre tel est absent");
+   if(!isset($_POST['Time'])) throw new Exception("Le paramètre time est absent");
  
   //Tableau associatif pour requête d'insertion 
   $Arr_Key_Value = array(
-                         
                          'Date' => $_POST['Date'],
-                         'Time' => $_POST['Time']);  
+                         'NB_joueurs' => $_POST['NB_joueurs'],
+                         'Nom_joueur' => $_POST['Nom_joueur'],
+                         'Num_joueur' => $_POST['Num_joueur'], 
+                         'Time'       => $_POST['Time']); 
+ 
   //Requête d'insertion
-  $Sql_Query = "INSERT INTO creneaux(id, Date, Time) VALUES (0, :Date, :Time)";
+  $Sql_Query = "INSERT INTO creneaux (Date, NB_joueurs, Nom_joueur, Num_joueur, Time) VALUES (:Date, :NB_joueurs, :Nom_joueur, :Num_joueur, :Time)";
   
   //Préparation de la requête (sécurisation des variables du tableau associatif)
   $Request= $Pdo_Object->prepare($Sql_Query);
@@ -21,29 +27,24 @@ try {
   //Exécution de la requête 
   $Request->execute($Arr_Key_Value);
   
+
+
   if($Request!=0) // nom d'utilisateur et mot de passe correctes
         {
-           $_SESSION['username'] = $username;
-           header('Location: modification_creneau2.php');
+       $_SESSION['username'] = $username;
+           header('Location: ../index.php');
 
         }
-  
+        
 } catch (Exception $e) {
    echo $e->getMessage(); 
 }
-
 finally{
  //Attention le finaly ne fonctionne que sur php 5.6 et supérieur 
  //Fermeture de la connexion en détruisant la référence mémoire à l'objet PDO
  $Pdo_Object = null;
 }
 
-try{
-    $DB = new PDO("mysql:host=localhost;dbname=projet_telethon","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'));
-} catch (Exception $ex) {
-echo 'base de donnée en vacance';
-exit();
-}
 
 
 

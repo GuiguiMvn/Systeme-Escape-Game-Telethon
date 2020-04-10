@@ -1,5 +1,4 @@
 
-
 <?php
 //Initialisation de l'objet PDO et ouverture de la connexion pour appel à la base de données
 $Pdo_Object = new PDO("mysql:host=localhost;dbname=projet_telethon","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION )); 
@@ -8,7 +7,6 @@ try {
    //Contrôle de l'éxistance des deux paramètres email et content
    if(!isset($_POST['login'])) throw new Exception("Le paramètre login est absent");
    if(!isset($_POST['password'])) throw new Exception("Le paramètre password est absent");
-
  
   //Tableau associatif pour requête d'insertion 
   $Arr_Key_Value = array(
@@ -35,6 +33,10 @@ if($Request!=0) // nom d'utilisateur et mot de passe correctes
         {
            $_SESSION['username'] = $username;
            header('Location: modification_superviseurs.php');
-        
-           
+
         }
+        
+        
+        
+        
+        

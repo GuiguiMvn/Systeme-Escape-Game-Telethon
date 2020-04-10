@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require '../Calendar/bootstrap.php';
+require '../Calendar/Events.php';
 
- <?php 
-include('container.php');
-?>    
-    
+
+
+$pdo = get_pdo();
+$events = new Calendar\Events($pdo);
+
+ if (!isset($_GET['id'])){
+    header('location : /404.php');
+} try{
+    $event = $events->find($_GET['id']);
+} catch (\Exception $e) {
+    e404();
+}
+
+?>
+
+
+
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +28,11 @@ include('container.php');
 
 	<title>Booking Form HTML Template</title>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="Inscription/css/bootstrap.min.css" />
-        <link type="text/css" rel="stylesheet" href="Inscription/css/style.css" />
+        <link type="text/css" rel="stylesheet" href="../Inscription/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="../Inscription/css/style.css" />
 
 </head>
-    
+     <?php include('container.php');?>
 <body>
 	<div id="booking" class="section">
 		<div class="section-center">
@@ -33,7 +48,7 @@ include('container.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Date</span>
-                                                                                <input name="Date" class="form-control" type="date" required>
+                                                                                <input name="Date"  type="date" required class="form-control" value="<?= $event['Date']; ?>">
 									</div>
 								</div>
 						
@@ -43,14 +58,11 @@ include('container.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Heure</span>
-                                                                                <input name="Time" class="form-control" type="time" required>
+                                                                                <input name="Time" class="form-control" type="time" value ="<?= $event['Time'] ?>"required>
 									</div>
 								</div>
 						
 							</div>
-                                                    
-                                                   
-                                                    
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" >
@@ -83,11 +95,10 @@ include('container.php');
  
 					</div>
 				</div>
-			</div>
-		</div>
-               
+                        </div>
+		</div>              
 	</div>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 

