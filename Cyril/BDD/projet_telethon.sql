@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 30 mars 2020 à 13:49
+-- Généré le :  ven. 10 avr. 2020 à 09:55
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Version de PHP :  7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,25 +32,31 @@ USE `projet_telethon`;
 
 DROP TABLE IF EXISTS `creneaux`;
 CREATE TABLE IF NOT EXISTS `creneaux` (
-  `idcreneaux` int(10) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `Date` date NOT NULL,
-  `NB_joueurs` int(11) NOT NULL,
-  `Nom_joueur` varchar(45) NOT NULL,
-  `Num_joueur` varchar(45) NOT NULL,
+  `NB_joueurs` varchar(11) NOT NULL,
+  `Nom_joueur` varchar(30) NOT NULL,
+  `Num_joueur` varchar(30) NOT NULL,
   `Time` time NOT NULL,
   `Statut` tinyint(1) NOT NULL DEFAULT '1' COMMENT ' 1=Active, 0=Block ',
   `roles_id` int(11) NOT NULL,
-  PRIMARY KEY (`idcreneaux`),
-  KEY `fk_creneaux_roles1` (`roles_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `id_joueur` int(11) NOT NULL,
+  `id_superviseur` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_creneaux_idrole` (`roles_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `creneaux`
 --
 
-INSERT INTO `creneaux` (`idcreneaux`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `Time`, `Statut`, `roles_id`) VALUES
-(1, '2020-03-27', 3, 'DOHIN', '0670449615', '00:00:00', 0, 0),
-(2, '2020-03-09', 3, 'ggggg', '0652525252', '19:13:00', 0, 0);
+INSERT INTO `creneaux` (`id`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `Time`, `Statut`, `roles_id`, `id_joueur`, `id_superviseur`) VALUES
+(5, '2020-03-29', '0', '', '', '20:59:00', 0, 0, 0, 0),
+(12, '2020-03-31', '', '', '', '16:00:00', 0, 0, 0, 0),
+(13, '2020-04-19', '', '', '', '14:00:00', 1, 0, 0, 0),
+(28, '2020-03-31', '1', 'Dohin', '0670449615', '16:00:00', 1, 0, 0, 0),
+(29, '2020-03-31', '1', 'Dohin', '0670449615', '16:00:00', 1, 0, 0, 0),
+(36, '2020-04-19', '1', 'Dohin', '0670449615', '14:00:00', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -86,17 +92,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `login` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `roles_id` int(2) NOT NULL,
-  `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_users_roles` (`roles_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  KEY `fk_users_idrole` (`roles_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `roles_id`, `name`) VALUES
-(2, 'superviseur', 'superviseur', 2, '');
+INSERT INTO `users` (`id`, `login`, `password`, `roles_id`) VALUES
+(2, 'superviseur', 'superviseur', 2),
+(9, 'admin', 'admin', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
