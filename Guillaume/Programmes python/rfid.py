@@ -364,7 +364,6 @@ class RFID(object):
             self.dev_write(0x01, 0x0C)
             self.dev_write(0x0D, 0x87)
             waiting = not self.irq.wait(0.1)
-            print(5)
         self.irq.clear()
         self.init()
 
