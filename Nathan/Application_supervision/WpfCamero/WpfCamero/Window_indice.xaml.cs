@@ -34,7 +34,20 @@ namespace WpfCamero
         public Window_indice()
         {
             InitializeComponent();
-            
+
+            List_indice.Items.Clear();
+            string myConnection = connectionString;
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            myConn.Open();
+
+            MySqlCommand Sql = new MySqlCommand("select text from tbindice", myConn);
+            MySqlDataReader dr;
+            dr = Sql.ExecuteReader();
+            while (dr.Read())
+            {
+                List_indice.Items.Add(dr["text"].ToString());
+            }
+
         }
 
         private void btn_Envoyer_indice_Click(object sender, RoutedEventArgs e)
@@ -44,6 +57,8 @@ namespace WpfCamero
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
         }
+
+       
     }
 
     public class Indice

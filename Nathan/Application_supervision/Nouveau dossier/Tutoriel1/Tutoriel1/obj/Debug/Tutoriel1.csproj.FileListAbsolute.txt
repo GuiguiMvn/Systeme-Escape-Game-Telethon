@@ -1,0 +1,10 @@
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\bin\Debug\Tutoriel1.exe.config
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\bin\Debug\Tutoriel1.exe
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\bin\Debug\Tutoriel1.pdb
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\bin\Debug\MySql.Data.dll
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.Form1.resources
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.Properties.Resources.resources
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.csproj.GenerateResource.Cache
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.exe
+d:\doccuments\visual studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.pdb
+D:\Doccuments\Visual Studio 2015\Projects\Tutoriel1\Tutoriel1\obj\Debug\Tutoriel1.csprojResolveAssemblyReference.cache
