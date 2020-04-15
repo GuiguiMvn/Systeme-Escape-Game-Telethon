@@ -45,6 +45,7 @@ namespace WpfCamero
             timerchrono.Start();
         }
 
+
         void timercam_Tick(object sender, EventArgs e)
         {
              lblTime.Content = DateTime.Now.ToLongTimeString();

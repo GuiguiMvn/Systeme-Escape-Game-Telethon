@@ -20,7 +20,7 @@
             </Image.Source>
         </Image>
         <Button x:Name="btn_Envoyer_indice" Click ="btn_Envoyer_indice_Click" Content="Envoyer le nouvel indice" HorizontalAlignment="Left" Margin="121,390,0,0" VerticalAlignment="Top" Width="153"/>
-        <TextBox x:Name="txtIndice" HorizontalAlignment="Left" Height="23" Margin="42,362,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="307"/>
+        <TextBox x:Name="txtIndice" HorizontalAlignment="Left" Height="23" Margin="42,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="307"/>
         <ListBox x:Name="List_indice" HorizontalAlignment="Left" Height="182" Margin="42,97,0,0" VerticalAlignment="Top" Width="307"/>
         <Label Content="Liste des indices prédéfinis :" HorizontalAlignment="Left" Height="29" Margin="42,61,0,0" VerticalAlignment="Top" Width="232" FontFamily="Century Gothic" FontSize="16"/>
         <Label Content="Envoyer un nouvel indice :" HorizontalAlignment="Left" Height="29" Margin="42,328,0,0" VerticalAlignment="Top" Width="217" FontFamily="Century Gothic" FontSize="16"/>

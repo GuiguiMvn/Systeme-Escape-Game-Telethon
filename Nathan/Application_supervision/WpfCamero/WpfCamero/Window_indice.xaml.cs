@@ -57,7 +57,6 @@ namespace WpfCamero
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
         }
-
        
     }
 

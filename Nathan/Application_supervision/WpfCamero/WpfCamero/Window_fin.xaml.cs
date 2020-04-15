@@ -49,7 +49,7 @@ namespace WpfCamero
             /*DataSet ds = new DataSet();
             SqlDataAdapter da = dbprovider.CreateDataAdapter();
             da.SelectCommand = Commandpath;
-            da.Fill(ds);*/
+            da.Fill(ds);
 
             // Assumes that connection is a valid SqlConnection object.  
             string queryString =
@@ -57,7 +57,7 @@ namespace WpfCamero
             SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
 
             DataSet dataSet = new DataSet("TblEquipe");
-            adapter.Fill(dataSet);
+            adapter.Fill(dataSet);*/
             
 
         }
