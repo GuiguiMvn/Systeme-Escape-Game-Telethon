@@ -8,24 +8,14 @@ import time
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
-LED = 5
+LED = 7
+GPIO.setup(LED, GPIO.OUT)
 UID = [116, 96, 204, 131, 91]
 
-def turn_led_on (led) :
-    GPIO.setup(led, GPIO.OUT) 
-    GPIO.output(led, GPIO.HIGH)
 
-def turn_led_off (led) :
-    GPIO.setup(led, GPIO.OUT) 
-    GPIO.output(led, GPIO.LOW)
-
-def turn_LED_on () :
-    turn_led_on(LED) 
-
-def turn_LED_off () :
-    turn_led_off(LED) 
 
 rc522 = RFID()
+GPIO.output(LED, GPIO.LOW)
 
 while True:
     rc522.wait_for_tag()
@@ -35,8 +25,10 @@ while True:
         if not error : 
             if UID == uid :
                 print('UID valide'.format(uid))
-                turn_LED_on()
+                GPIO.output(LED, GPIO.HIGH)
+                time.sleep(1)
+                GPIO.output(LED, GPIO.LOW)
             else :
                 print('UID non valide'.format(uid))
-                turn_LED_off()
-            time.sleep(1)
+                GPIO.output(LED, GPIO.LOW)
+            
