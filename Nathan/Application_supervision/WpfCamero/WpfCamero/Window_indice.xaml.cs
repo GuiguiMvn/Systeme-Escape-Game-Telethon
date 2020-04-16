@@ -18,6 +18,8 @@ using System.IO.Ports;
 
 // Librairie MySQL ajoutée dans les références.
 using MySql.Data.MySqlClient;
+using System.Net.Sockets;
+using System.Net;
 
 namespace WpfCamero
 {
@@ -48,7 +50,28 @@ namespace WpfCamero
                 List_indice.Items.Add(dr["text"].ToString());
             }
 
+            // Envoi de la trame sur IP :
+           // CheckForIllegalCrossThreadCalls = false;
+            adrIpLocale = getAdrIpLocaleV4();
+
         }
+
+        // Suite de l'envoi de l'IP
+        private System.Net.IPAddress adrIpLocale;
+        private IPAddress getAdrIpLocaleV4()
+        {
+            string hote = Dns.GetHostName();
+            IPHostEntry ipLocales = Dns.GetHostEntry(hote);
+            foreach (IPAddress ip in ipLocales.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip;
+                }
+            }
+            return null; // aucune adresse IP V4
+        }
+
 
         private void btn_Envoyer_indice_Click(object sender, RoutedEventArgs e)
         {
@@ -56,8 +79,22 @@ namespace WpfCamero
             indice.Text = txtIndice.Text;
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
+
+            string ipaddr = "192.168.1.0";
+
+            byte[] message;
+            Socket sock = new Socket(AddressFamily.InterNetwork,
+            SocketType.Dgram, ProtocolType.Udp);
+            System.Net.IPEndPoint epEmetteur = new IPEndPoint(adrIpLocale, 0);
+            sock.Bind(epEmetteur);
+            IPEndPoint epRecepteur = new IPEndPoint(
+            IPAddress.Parse(ipaddr), 33000); //IPAddress.Parse(tb_ipDestinataire.Text), 33000);
+            message = Encoding.Unicode.GetBytes(txtIndice.Text);
+            sock.SendTo(message, epRecepteur);
+            sock.Close();
+
         }
-       
+
     }
 
     public class Indice
