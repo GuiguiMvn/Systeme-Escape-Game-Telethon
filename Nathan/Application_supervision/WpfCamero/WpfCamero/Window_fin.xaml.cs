@@ -20,6 +20,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
+
 namespace WpfCamero
 {
     /// <summary>
@@ -32,6 +33,8 @@ namespace WpfCamero
         // Nous avons créé une base de données nommée "dbsupervision"
         // L'utilisateur choisi pour administrer cette bdd est "superviseur" avec son mot de passe "Nantes44".
         string connectionString = "SERVER=127.0.0.1; DATABASE=dbsupervision; UID=superviseur; PASSWORD=Nantes44";
+
+   
         public Window_fin()
         {
             InitializeComponent();
@@ -44,6 +47,10 @@ namespace WpfCamero
             Bdd bdd = new Bdd();
             bdd.Fin_Equipe(equipe);
             bdd.MAJScore(equipe);
+
+            listEquipe.Items.Clear();
+
+
 
 
             /*DataSet ds = new DataSet();
@@ -184,7 +191,9 @@ namespace WpfCamero
 
         }
 
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-
+        }
     }
 }

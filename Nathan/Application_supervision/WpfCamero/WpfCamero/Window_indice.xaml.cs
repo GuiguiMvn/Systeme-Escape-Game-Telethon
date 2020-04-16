@@ -52,12 +52,12 @@ namespace WpfCamero
 
             // Envoi de la trame sur IP :
            // CheckForIllegalCrossThreadCalls = false;
-            adrIpLocale = getAdrIpLocaleV4();
+           // adrIpLocale = getAdrIpLocaleV4();
 
         }
 
         // Suite de l'envoi de l'IP
-        private System.Net.IPAddress adrIpLocale;
+       /* private System.Net.IPAddress adrIpLocale;
         private IPAddress getAdrIpLocaleV4()
         {
             string hote = Dns.GetHostName();
@@ -70,7 +70,7 @@ namespace WpfCamero
                 }
             }
             return null; // aucune adresse IP V4
-        }
+        }*/
 
 
         private void btn_Envoyer_indice_Click(object sender, RoutedEventArgs e)
@@ -80,18 +80,31 @@ namespace WpfCamero
             Bdd bdd = new Bdd();
             bdd.AddIndice(indice);
 
-            string ipaddr = "192.168.1.0";
+            /* string ipaddr = "192.168.1.0";
 
-            byte[] message;
-            Socket sock = new Socket(AddressFamily.InterNetwork,
-            SocketType.Dgram, ProtocolType.Udp);
-            System.Net.IPEndPoint epEmetteur = new IPEndPoint(adrIpLocale, 0);
-            sock.Bind(epEmetteur);
-            IPEndPoint epRecepteur = new IPEndPoint(
-            IPAddress.Parse(ipaddr), 33000); //IPAddress.Parse(tb_ipDestinataire.Text), 33000);
-            message = Encoding.Unicode.GetBytes(txtIndice.Text);
-            sock.SendTo(message, epRecepteur);
-            sock.Close();
+             byte[] message;
+             Socket sock = new Socket(AddressFamily.InterNetwork,
+             SocketType.Dgram, ProtocolType.Udp);
+             System.Net.IPEndPoint epEmetteur = new IPEndPoint(adrIpLocale, 0);
+             sock.Bind(epEmetteur);
+             IPEndPoint epRecepteur = new IPEndPoint(
+             IPAddress.Parse(ipaddr), 33000); //IPAddress.Parse(tb_ipDestinataire.Text), 33000);
+             message = Encoding.Unicode.GetBytes(txtIndice.Text);
+             sock.SendTo(message, epRecepteur);
+             sock.Close();*/
+
+
+            string message = txtIndice.Text;
+
+            //Sérialisation du message en tableau de bytes.
+            byte[] msg = Encoding.Default.GetBytes(message);
+
+            UdpClient udpClient = new UdpClient();
+
+            //La méthode Send envoie un message UDP.
+            udpClient.Send(msg, msg.Length, "127.0.0.1", 5035);
+
+            udpClient.Close();
 
         }
 
