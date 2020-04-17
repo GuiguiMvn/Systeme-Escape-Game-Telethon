@@ -20,15 +20,7 @@
             </Image.Source>
         </Image>
         <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="34" Margin="108,43,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="160"/>
-        <ListView x:Name="listEquipe" HorizontalAlignment="Left" Height="305" Margin="17,95,0,0" VerticalAlignment="Top" Width="314" SelectionChanged="ListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Équipe"/>
-                    <GridViewColumn Header="Score"/>
-                    <GridViewColumn Header="Date"/>
-               </GridView>
-            </ListView.View>
-        </ListView>
+        <Button x:Name="BtnLister"  Content="Lister les équipes !" HorizontalAlignment="Left" Margin="178,400,0,0" VerticalAlignment="Top" Width="152" Click="BtnLister_Click_1"/>
 
     </Grid>
 </Window>

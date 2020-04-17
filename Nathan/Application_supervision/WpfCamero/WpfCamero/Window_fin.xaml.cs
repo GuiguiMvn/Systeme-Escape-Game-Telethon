@@ -18,6 +18,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Data;
 using System.Data.SqlClient;
+using System.ComponentModel;
 
 
 
@@ -48,25 +49,12 @@ namespace WpfCamero
             bdd.Fin_Equipe(equipe);
             bdd.MAJScore(equipe);
 
-            listEquipe.Items.Clear();
+        }
 
-
-
-
-            /*DataSet ds = new DataSet();
-            SqlDataAdapter da = dbprovider.CreateDataAdapter();
-            da.SelectCommand = Commandpath;
-            da.Fill(ds);
-
-            // Assumes that connection is a valid SqlConnection object.  
-            string queryString =
-              "SELECT * FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
-            SqlDataAdapter adapter = new SqlDataAdapter(queryString, connectionString);
-
-            DataSet dataSet = new DataSet("TblEquipe");
-            adapter.Fill(dataSet);*/
-            
-
+        private void BtnLister_Click(object sender, EventArgs e)
+        {
+            Classement classement = new Classement();
+            classement.ShowDialog();
         }
 
         public class Equipe
@@ -103,7 +91,7 @@ namespace WpfCamero
                 this.connection = new MySqlConnection(connectionString);
             }
 
-            // Méthode pour ajouter une équipe :
+            // Méthode pour changer les résultats d'une équipe :
             public void Fin_Equipe(Equipe equipe)
             {
                 try
@@ -136,6 +124,7 @@ namespace WpfCamero
                 }
             }
 
+            //Méthode pour mettre à jour le score de l'équipe :
             public void MAJScore(Equipe equipe)
             {
                 try
@@ -149,7 +138,7 @@ namespace WpfCamero
                     // Requête SQL
                     //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
                     cmd.CommandText = "UPDATE tbequipe SET score = @score WHERE date=(SELECT MAX(date)) ORDER BY date DESC LIMIT 1";
-                   
+
                     // Utilisation de l'objet contact passé en paramètre
                     cmd.Parameters.AddWithValue("@score", equipe.Score);
 
@@ -167,33 +156,36 @@ namespace WpfCamero
                 }
             }
 
-            public void Lister_Equipe(Equipe equipe)
+
+
+         /*   public void Lister_Equipe(Equipe equipe)
             {
-                                
-                    // Ouverture de la connexion SQL
-                    this.connection.Open();
 
-                    // Création d'une commande SQL en fonction de l'objet connection
-                    MySqlCommand cmd = this.connection.CreateCommand();
+                // Ouverture de la connexion SQL
+                this.connection.Open();
 
-                    // Requête SQL
-                    //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
-                    cmd.CommandText = "SELECT * FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
+                // Création d'une commande SQL en fonction de l'objet connection
+                MySqlCommand cmd = this.connection.CreateCommand();
 
-                    // Exécution de la commande SQL
-                    cmd.ExecuteNonQuery();
-
-                    // Fermeture de la connexion
-                    this.connection.Close();
-            }
+                // Requête SQL
+                //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
+                cmd.CommandText = "SELECT nom, score, date FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
+                MySqlDataReader dr = cmd.ExecuteReader();
 
 
 
+                // Exécution de la commande SQL
+                cmd.ExecuteNonQuery();
+
+                // Fermeture de la connexion
+                this.connection.Close();
+            }*/
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BtnLister_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Classement classement = new Classement();
+            classement.ShowDialog();
         }
     }
 }
