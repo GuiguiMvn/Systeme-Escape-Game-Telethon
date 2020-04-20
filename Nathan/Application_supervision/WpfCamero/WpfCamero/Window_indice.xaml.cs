@@ -36,7 +36,8 @@ namespace WpfCamero
         public Window_indice()
         {
             InitializeComponent();
-            
+
+           
             List_indice.Items.Clear();
             string myConnection = connectionString;
             MySqlConnection myConn = new MySqlConnection(myConnection);
@@ -166,7 +167,8 @@ namespace WpfCamero
             }
             catch
             {
-                MessageBox.Show("L'ajout du nouvel indice dans la base de données à échoué. Veuillez vous assurer que le serveur MySQL (Base de données) est correctement lancé.");
+                MessageBox.Show("L'ajout du nouvel indice dans la base de données à échoué. " +
+                "Veuillez vous assurer que le serveur MySQL (Base de données) est correctement lancé.");
             }
         }
     }

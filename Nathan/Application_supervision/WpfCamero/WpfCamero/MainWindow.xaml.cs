@@ -24,7 +24,7 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 15; //1h = 3540s
+        private int time = 3600; //1h = 3599s
         private DispatcherTimer timercam;
         private DispatcherTimer timerchrono;
 
@@ -49,7 +49,7 @@ namespace WpfCamero
         void timercam_Tick(object sender, EventArgs e)
         {
              lblTime.Content = DateTime.Now.ToLongTimeString();
-             wbDLink.Refresh();
+             //wbDLink.Refresh();
         } 
 
         void timerchrono_Tick(object sender, EventArgs e)
