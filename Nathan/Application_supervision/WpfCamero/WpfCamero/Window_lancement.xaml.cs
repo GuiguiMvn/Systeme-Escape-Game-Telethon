@@ -117,9 +117,7 @@ namespace WpfCamero
                 }
                 catch
                 {
-                    // Gestion des erreurs :
-                    // Possibilité de créer un Logger pour les exceptions SQL reçus
-                    // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
+                    MessageBox.Show("La création d'une nouvelle équipe a échouée. Veuillez vous assurer que le serveur MySQL (Base de données) est correctement lancé. Si le problème persiste, veuillez contacter un technicien.");
                 }
             }
         }

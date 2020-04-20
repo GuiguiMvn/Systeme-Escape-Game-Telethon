@@ -20,7 +20,7 @@
             </Image.Source>
         </Image>
         <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="34" Margin="108,43,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="160"/>
-        <Button x:Name="BtnLister"  Content="Lister les équipes !" HorizontalAlignment="Left" Margin="178,400,0,0" VerticalAlignment="Top" Width="152" Click="BtnLister_Click_1"/>
+        <Button x:Name="BtnLister"  Content="Afficher le classement des équipes !" HorizontalAlignment="Left" Margin="24,346,0,0" VerticalAlignment="Top" Width="344" Click="BtnLister_Click_1" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Height="41"/>
 
     </Grid>
 </Window>

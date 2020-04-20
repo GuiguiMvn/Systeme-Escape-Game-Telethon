@@ -42,9 +42,14 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listEquipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listEquipe.ForeColor = System.Drawing.Color.Purple;
+            this.listEquipe.FullRowSelect = true;
             this.listEquipe.HideSelection = false;
             this.listEquipe.Location = new System.Drawing.Point(12, 12);
+            this.listEquipe.MultiSelect = false;
             this.listEquipe.Name = "listEquipe";
+            this.listEquipe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.listEquipe.Size = new System.Drawing.Size(342, 365);
             this.listEquipe.TabIndex = 0;
             this.listEquipe.UseCompatibleStateImageBehavior = false;
