@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="arret.xaml.cs">
+      <DependentUpon>arret.xaml</DependentUpon>
+    </Compile>
     <Compile Include="classement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +110,10 @@
     <Compile Include="Window_lancement.xaml.cs">
       <DependentUpon>Window_lancement.xaml</DependentUpon>
     </Compile>
+    <Page Include="arret.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -210,6 +217,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="attention.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

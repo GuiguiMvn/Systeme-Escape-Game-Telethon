@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("window%20fin%20partie.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("attention.png")]
 
 

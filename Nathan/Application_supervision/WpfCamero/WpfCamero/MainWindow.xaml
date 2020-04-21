@@ -46,6 +46,8 @@
                 <BitmapImage UriSource="Ligne_camera.PNG"/>
             </Image.Source>
         </Image>
+        <Label Content="640 x 480" HorizontalAlignment="Left" Height="31" Margin="630,-39,0,0" VerticalAlignment="Top" Width="67" FontStyle="Italic" FontFamily="Sergoe UI"/>
+        <Label Content="192.168.1.4" HorizontalAlignment="Left" Height="31" Margin="348,-41,0,0" VerticalAlignment="Top" Width="77" FontStyle="Italic" FontFamily="Sergoe UI"/>
 
     </Grid>
 
