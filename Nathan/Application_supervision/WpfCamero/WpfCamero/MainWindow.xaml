@@ -10,17 +10,18 @@
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
+        <Image HorizontalAlignment="Left" Height="85" Margin="-286,483,-1,-140" VerticalAlignment="Top" Width="996" >
+            <Image.Source>
+                <BitmapImage UriSource="Ligne jaune.PNG"/>
+            </Image.Source>
+        </Image>
+
         <WebBrowser x:Name="wbDLink" Source="http://www.google.fr" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
 
         <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
             <Image.Source>
                 <BitmapImage UriSource="ligne violette avec logo.png" />
-            </Image.Source>
-        </Image>
-        <Image HorizontalAlignment="Left" Height="85" Margin="-286,483,-1,-140" VerticalAlignment="Top" Width="996" >
-            <Image.Source>
-                <BitmapImage UriSource="Ligne jaune.PNG"/>
             </Image.Source>
         </Image>
         <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-310,24,0,0" Opacity="0.165" >
@@ -48,7 +49,12 @@
         </Image>
         <Label Content="640 x 480" HorizontalAlignment="Left" Height="31" Margin="630,-39,0,0" VerticalAlignment="Top" Width="67" FontStyle="Italic" FontFamily="Sergoe UI"/>
         <Label Content="192.168.1.4" HorizontalAlignment="Left" Height="31" Margin="348,-41,0,0" VerticalAlignment="Top" Width="77" FontStyle="Italic" FontFamily="Sergoe UI"/>
-
+        <Button x:Name="Stopper_partie" Content="    Stopper la partie" HorizontalAlignment="Left" Height="32" Margin="-258,446,0,-50" VerticalAlignment="Top" Width="153" Background="White" BorderBrush="Red" Foreground="Red" FontStyle="Italic" Click="Stopper_partie_Click"/>
+        <Image HorizontalAlignment="Left" Height="28" Margin="-252,448,0,-48" VerticalAlignment="Top" Width="28" >
+            <Image.Source>
+                <BitmapImage UriSource="attention.PNG" />
+            </Image.Source>
+        </Image>
     </Grid>
 
 

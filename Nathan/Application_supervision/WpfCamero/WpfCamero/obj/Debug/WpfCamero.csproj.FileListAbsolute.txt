@@ -39,3 +39,5 @@ C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Interop.SSCE.dll
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.csproj.ResolveComReference.cache
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.Classement.resources
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\arret.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\arret.baml

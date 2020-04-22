@@ -24,9 +24,16 @@ namespace WpfCamero
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnStopper_Click(object sender, RoutedEventArgs e)
         {
+            Window_fin Fen = new Window_fin();
+            Fen.ShowDialog();
+            this.Close();
+        }
 
+        private void BtnAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

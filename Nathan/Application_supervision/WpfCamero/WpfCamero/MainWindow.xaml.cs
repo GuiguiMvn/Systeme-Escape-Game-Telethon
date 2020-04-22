@@ -79,6 +79,12 @@ namespace WpfCamero
         {
 
         }
+
+        private void Stopper_partie_Click(object sender, RoutedEventArgs e)
+        {
+            arret Fen = new arret();
+            Fen.ShowDialog();
+        }
     }
 
 
