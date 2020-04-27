@@ -10,6 +10,12 @@
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
+        <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
+            <Image.Source>
+                <BitmapImage UriSource="ligne violette avec logo.png" />
+            </Image.Source>
+        </Image>
+
         <Image HorizontalAlignment="Left" Height="85" Margin="-286,483,-1,-140" VerticalAlignment="Top" Width="996" >
             <Image.Source>
                 <BitmapImage UriSource="Ligne jaune.PNG"/>
@@ -19,11 +25,6 @@
         <WebBrowser x:Name="wbDLink" Source="https://stfelixlasalle.fr/" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
 
-        <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
-            <Image.Source>
-                <BitmapImage UriSource="ligne violette avec logo.png" />
-            </Image.Source>
-        </Image>
         <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-310,24,0,0" Opacity="0.165" >
             <Image.Source>
                 <BitmapImage UriSource="logo-telethon-2.PNG"/>
@@ -55,6 +56,8 @@
                 <BitmapImage UriSource="attention.PNG" />
             </Image.Source>
         </Image>
+        <TextBlock x:Name="TxtIndice" HorizontalAlignment="Left" Height="65" Margin="-275,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Foreground="#FF5600BD" FontSize="16" FontFamily="Yu Gothic UI Semilight"/>
+        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="-69,-123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="586" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
     </Grid>
 
 

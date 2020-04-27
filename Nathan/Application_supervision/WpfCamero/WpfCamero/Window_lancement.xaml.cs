@@ -51,6 +51,8 @@ namespace WpfCamero
 
             MainWindow FenSuperviser = new MainWindow();
             FenSuperviser.ShowDialog();
+
+            this.Close();
         }
 
         public class Equipe

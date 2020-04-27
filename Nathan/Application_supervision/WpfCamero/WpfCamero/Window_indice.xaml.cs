@@ -116,6 +116,8 @@ namespace WpfCamero
         // Création de 2 propriétés identifiant et texte (de l'indice).
         public int Id { get; set; }
         public string Text { get; set; }
+        public string Date { get; set; }
+
 
         // Constructeur
         public Indice()
@@ -153,7 +155,7 @@ namespace WpfCamero
                 MySqlCommand cmd = this.connection.CreateCommand();
 
                 // Requête SQL
-                cmd.CommandText = "INSERT INTO tbindice (id, text) VALUES (@id, @text)";
+                cmd.CommandText = "INSERT INTO tbindice (id, text, date_dernier_envoi) VALUES (@id, @text, NOW())";
 
                 // Utilisation de l'objet contact passé en paramètre
                 cmd.Parameters.AddWithValue("@id", indice.Id);
@@ -164,6 +166,8 @@ namespace WpfCamero
 
                 // Fermeture de la connexion
                 this.connection.Close();
+
+                MessageBox.Show("Le nouvel indice a été correctement enregistré !");
             }
             catch
             {
@@ -171,5 +175,6 @@ namespace WpfCamero
                 "Veuillez vous assurer que le serveur MySQL (Base de données) est correctement lancé.");
             }
         }
+        
     }
 }

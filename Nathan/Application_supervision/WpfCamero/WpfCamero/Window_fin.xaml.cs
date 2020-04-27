@@ -152,30 +152,6 @@ namespace WpfCamero
                 }
             }
 
-
-
-         /*   public void Lister_Equipe(Equipe equipe)
-            {
-
-                // Ouverture de la connexion SQL
-                this.connection.Open();
-
-                // Création d'une commande SQL en fonction de l'objet connection
-                MySqlCommand cmd = this.connection.CreateCommand();
-
-                // Requête SQL
-                //Permet de mettre à jour l'heure de fin de la table tbequipe avec le dernier id trier par ordre décroissant et limiter à 1 résultat. 
-                cmd.CommandText = "SELECT nom, score, date FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC LIMIT 10";
-                MySqlDataReader dr = cmd.ExecuteReader();
-
-
-
-                // Exécution de la commande SQL
-                cmd.ExecuteNonQuery();
-
-                // Fermeture de la connexion
-                this.connection.Close();
-            }*/
         }
 
         private void BtnLister_Click_1(object sender, RoutedEventArgs e)
