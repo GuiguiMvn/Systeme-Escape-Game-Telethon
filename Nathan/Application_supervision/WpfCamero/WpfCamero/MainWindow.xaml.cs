@@ -24,7 +24,7 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 3600; //1h = 3599s
+        private int time = 15; //1h = 3600s
         private DispatcherTimer timercam;
         private DispatcherTimer timerchrono;
 
@@ -34,7 +34,7 @@ namespace WpfCamero
 
             // Fonction de rafraichissement de l'image de la caméra IP :
             timercam = new DispatcherTimer();
-            timercam.Interval = TimeSpan.FromSeconds(1);
+            timercam.Interval = TimeSpan.FromSeconds(5);
             timercam.Tick += timercam_Tick;
             timercam.Start();
 
@@ -49,7 +49,7 @@ namespace WpfCamero
         void timercam_Tick(object sender, EventArgs e)
         {
              lblTime.Content = DateTime.Now.ToLongTimeString();
-             //wbDLink.Refresh();
+             wbDLink.Refresh();
         } 
 
         void timerchrono_Tick(object sender, EventArgs e)
