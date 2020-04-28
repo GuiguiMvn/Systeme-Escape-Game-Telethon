@@ -13,7 +13,7 @@ try {
                          'login' => $_POST['login'],
                          'password' => $_POST['password']);  
   //Requête d'insertion
-  $Sql_Query = "INSERT INTO users(id, login, password, roles_id) VALUES (0, :login,:password, 1)";
+  $Sql_Query = "INSERT INTO users(id, login, password, roles_id) VALUES (0, :login,:password, 2)";
   
   //Préparation de la requête (sécurisation des variables du tableau associatif)
   $Request= $Pdo_Object->prepare($Sql_Query);

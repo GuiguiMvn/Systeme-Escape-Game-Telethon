@@ -1,4 +1,48 @@
           
+<?php 
+       require 'util.php'; 
+       init_php_session();     
+   
+           if(isset($_POST['login']) && !empty($_POST['login']) 
+          && isset($_POST['password']) && !empty($_POST['password']))
+           {     
+
+    $PDO = new PDO( 'mysql:host=localhost;dbname=projet_telethon', 'root', '' ); 
+
+               $username = $_POST['login'];
+               $password = $_POST['password']; 
+               
+     global $PDO;
+    $req = $PDO->prepare('SELECT * FROM users WHERE login = :login AND password = :password');
+    $req->execute($_POST);
+    $data = $req->fetch(PDO::FETCH_OBJ);
+ 
+
+               if($data){
+                   if($password && $data->password){
+                       init_php_session();
+                       $_SESSION['login'] = $username;
+                       $_SESSION['roles_id'] = $data->roles_id;
+                      
+                       print_r($data);
+                   }
+                 else{
+                       echo 'Identifiant -incorrect';
+                   }   
+                  
+               } else{
+                       echo 'Identifiant incorrect';
+                   }                 
+           }            
+      
+if (is_admin()){
+  header('Location: modification_superviseurs.php');  
+} elseif (is_superviseur()){
+  header('Location: modification_creneau2.php');  
+} 
+
+?>
+  
 
 <html lang="fr" class="translated-ltr"><head>
 	<title>Espcace Membre connexion</title>
@@ -31,7 +75,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                            <form class="login100-form validate-form flex-sb flex-w" action="verification.php" method="POST">
+                            <form class="login100-form validate-form flex-sb flex-w" action="login.php" method="POST">
 					<span class="login100-form-title p-b-32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                Espace Membre
 					 </font></font></span>
@@ -55,24 +99,8 @@
 						<span class="focus-input100"></span>
 					</div>
                              
-      		
-					<div class="flex-sb-m w-full p-b-48">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-								Se souvenir de moi
-							</font></font></label>
-						</div>
-
-						<div>
-							<a href="#" class="txt3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-								Mot de passe oublié?
-							</font></font></a>
-						</div>
-					</div>
-                   
-                                    <div class="container-login100-form-btn"> 
-						<button class="login100-form-btn" name="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                       <div class="container-login100-form-btn"> 
+						<button  class="login100-form-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 							S'identifier
 						</font></font></button>
                                         
@@ -109,6 +137,159 @@
 
 
 <div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

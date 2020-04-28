@@ -40,14 +40,63 @@ class Events {
             return $days;
         }
         
-        public function find (int $id): array{
+        public function find(int $id): array{
             
           return $this->pdo->query("SELECT * FROM creneaux WHERE id = $id")->fetch();
-        
-           
+ 
         }
+        
+        public function hydrate (Event $event, array $data){
+            $event -> $_GET[$data['Date']];
+ $event -> $_GET[$data['NB_joueurs']];
+$event -> $_GET[$data['Nom_joueur']];
+ $event -> $_GET[$data['Num_joueur']];
+ $event -> $_GET[$data['Time']];
+ 
+ return $event;
+        }
+        
+       public function create (Event $event): bool {
+          $statement= $this->pdo->prepare('Date, NB_joueurs, Nom_joueur, Num_joueur, Time) VALUES (?,?,?,?,?)');
+           return $statement->execute([
+               $event -> $_GET['Date'],
+                         $event -> $_GET['NB_joueurs'],
+                         $event -> $_GET['Nom_joueur'],
+                         $event -> $_GET['Num_joueur'],
+                         $event -> $_GET['Time'],
+               
+           ]);
+       }
+        
+           public function update ($event): bool {
+          $statement= $this->pdo->prepare('UPDATE creneaux SET Date = ?, NB_joueurs = ?, Nom_joueur= ?, Num_joueur= ?, Time= ?');
+           return $statement->execute([
+               $event -> $_GET['Date'],
+                         $event -> $_GET['NB_joueurs'],
+                         $event -> $_GET['Nom_joueur'],
+                         $event -> $_GET['Num_joueur'],
+                         $event -> $_GET['Time'],
+               
+           ]);
+       }
+        
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

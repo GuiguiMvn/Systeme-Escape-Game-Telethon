@@ -12,9 +12,11 @@ try {
                          
                          'Date' => $_POST['Date'],
                          'Time' => $_POST['Time']);  
+  
+  
   //Requête d'insertion
   $Sql_Query = "INSERT INTO creneaux(id, Date, Time) VALUES (0, :Date, :Time)";
-  
+
   //Préparation de la requête (sécurisation des variables du tableau associatif)
   $Request= $Pdo_Object->prepare($Sql_Query);
   

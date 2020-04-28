@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 10 avr. 2020 à 09:55
+-- Généré le :  mar. 28 avr. 2020 à 08:12
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -39,24 +39,23 @@ CREATE TABLE IF NOT EXISTS `creneaux` (
   `Num_joueur` varchar(30) NOT NULL,
   `Time` time NOT NULL,
   `Statut` tinyint(1) NOT NULL DEFAULT '1' COMMENT ' 1=Active, 0=Block ',
-  `roles_id` int(11) NOT NULL,
-  `id_joueur` int(11) NOT NULL,
-  `id_superviseur` int(11) NOT NULL,
+  `users_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_creneaux_idrole` (`roles_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+  KEY `fk_creneaux_users` (`users_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `creneaux`
 --
 
-INSERT INTO `creneaux` (`id`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `Time`, `Statut`, `roles_id`, `id_joueur`, `id_superviseur`) VALUES
-(5, '2020-03-29', '0', '', '', '20:59:00', 0, 0, 0, 0),
-(12, '2020-03-31', '', '', '', '16:00:00', 0, 0, 0, 0),
-(13, '2020-04-19', '', '', '', '14:00:00', 1, 0, 0, 0),
-(28, '2020-03-31', '1', 'Dohin', '0670449615', '16:00:00', 1, 0, 0, 0),
-(29, '2020-03-31', '1', 'Dohin', '0670449615', '16:00:00', 1, 0, 0, 0),
-(36, '2020-04-19', '1', 'Dohin', '0670449615', '14:00:00', 1, 0, 0, 0);
+INSERT INTO `creneaux` (`id`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, `Time`, `Statut`, `users_id`) VALUES
+(48, '2020-04-18', '', '', '', '04:02:00', 1, 0),
+(45, '2020-04-16', '', '', '', '01:02:00', 1, 0),
+(40, '2020-04-17', '1', 'Dohin', '0670449615', '00:00:00', 0, 0),
+(39, '2020-04-18', '1', 'r', '0670449615', '04:00:00', 0, 0),
+(46, '2020-04-09', '', '', '', '01:02:00', 1, 0),
+(47, '2020-04-23', '', '', '', '04:03:00', 1, 0),
+(49, '2020-04-13', '', '', '', '20:02:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -66,9 +65,8 @@ INSERT INTO `creneaux` (`id`, `Date`, `NB_joueurs`, `Nom_joueur`, `Num_joueur`, 
 
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(2) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
-  `level` int(2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -76,9 +74,9 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- Déchargement des données de la table `roles`
 --
 
-INSERT INTO `roles` (`id`, `name`, `level`) VALUES
-(1, 'aministrateur', 2),
-(2, 'superviseur', 1);
+INSERT INTO `roles` (`id`, `name`) VALUES
+(1, 'aministrateur'),
+(2, 'superviseur');
 
 -- --------------------------------------------------------
 
@@ -93,8 +91,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(45) NOT NULL,
   `roles_id` int(2) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_users_idrole` (`roles_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  KEY `fk_users_roles` (`roles_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
@@ -102,7 +100,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `login`, `password`, `roles_id`) VALUES
 (2, 'superviseur', 'superviseur', 2),
-(9, 'admin', 'admin', 1);
+(9, 'admin', 'admin', 1),
+(12, 'cyril', 'dohi', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

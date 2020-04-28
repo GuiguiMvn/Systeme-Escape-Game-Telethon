@@ -22,11 +22,10 @@ if (isset($_GET['supprimer'])){
 
  
  if (isset($_POST['modifier'])){
-    $stmt = $pdo->prepare("UPDATE users set login = :monNom, password = :mdp WHERE id = :monid");
-    $stmt->bindValue(":monid", $_POST['id'], PDO::PARAM_INT);
+    $stmt = $pdo->prepare("UPDATE users login = :monNom, password = :mdp WHERE id = :monid");
+    $stmt->bindValue(":monid", $_POST['modifier'], PDO::PARAM_INT);
     $stmt->bindValue(":monNom", $_POST['Nom'], PDO::PARAM_STR);
     $stmt->bindValue(":mdp", $_POST['Mdp'], PDO::PARAM_STR);
-
     $stmt->execute();
 } 
 

@@ -82,7 +82,7 @@ class Month{
     }
     
     public function nextMonth (): Month{
-        $month = $this-> month +1;
+        $month = $this->month + 1;
         $year = $this->year;
         
         if($month > 12){
@@ -93,7 +93,7 @@ class Month{
         return new Month($month, $year);
     }
       public function previousMonth (): Month{
-        $month = $this-> month -1;
+        $month = $this->month -1;
         $year = $this->year;
         
         if($month < 1){
