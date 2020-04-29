@@ -29,10 +29,12 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 15; //1h = 3600s
-        private DispatcherTimer timercam;
-        private DispatcherTimer timerchrono;
-        private DispatcherTimer timermessage;
+        
+        private DispatcherTimer timercam; //Minuterie pour la caméra IP.
+        private DispatcherTimer timerchrono; //Minuterie pour le chronometre.
+        private DispatcherTimer timermessage; //Minuterie pour le renouvellement du message (indice).
+
+        private int time = 60; //1h = 3600s
 
         public MainWindow()
         {
@@ -56,16 +58,19 @@ namespace WpfCamero
             timermessage.Tick += timercam_Tick;
             timermessage.Start();
 
-            string connectionString = "SERVER=127.0.0.1; DATABASE=dbsupervision; UID=superviseur; PASSWORD=Nantes44";
+            string connectionString = "SERVER=127.0.0.1; DATABASE=dbsupervision;" +
+                " UID=superviseur; PASSWORD=Nantes44";
             string myConnection = connectionString;
             MySqlConnection myConn = new MySqlConnection(myConnection);
             myConn.Open();
-            string sql = "SELECT text FROM tbindice WHERE date_dernier_envoi = (SELECT MAX(date_dernier_envoi)) ORDER BY date_dernier_envoi DESC LIMIT 2";
+
+            string sql = "SELECT text FROM tbindice WHERE date_dernier_envoi = (SELECT MAX(date_dernier_envoi))" +
+                "ORDER BY date_dernier_envoi DESC LIMIT 2";
             MySqlCommand cmd = new MySqlCommand(sql, myConn);
             TxtIndice.Text = cmd.ExecuteScalar().ToString();
-
             
-            string sql2 = "SELECT nom FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
+            string sql2 = "SELECT nom FROM tbequipe WHERE date = (SELECT MAX(date)) " +
+                "ORDER BY date DESC LIMIT 1 ";
             MySqlCommand cmd2 = new MySqlCommand(sql2, myConn);
             TxtEquipe.Text = cmd2.ExecuteScalar().ToString();
 
@@ -112,15 +117,19 @@ namespace WpfCamero
             Fen.ShowDialog();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void Stopper_partie_Click(object sender, RoutedEventArgs e)
         {
-            arret Fen = new arret();
+            arret Fen = new arret(this);
             Fen.ShowDialog();
+        }
+
+        public void Terminer_partie()
+        {
+            timerchrono.Stop();
+            Window_fin Fen = new Window_fin();
+            Fen.ShowDialog();
+
         }
     }
 
