@@ -29,7 +29,7 @@ namespace WpfCamero
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int time = 15; //1h = 3600s
+        private int time = 3602; //1h = 3600s
         private DispatcherTimer timercam;
         private DispatcherTimer timerchrono;
         private DispatcherTimer timermessage;
