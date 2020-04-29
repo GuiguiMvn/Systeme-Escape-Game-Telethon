@@ -19,15 +19,16 @@ namespace WpfCamero
     /// </summary>
     public partial class arret : Window
     {
-        public arret()
+        MainWindow mainWin;
+        public arret(MainWindow fen)
         {
             InitializeComponent();
+            mainWin = fen;
         }
 
         private void BtnStopper_Click(object sender, RoutedEventArgs e)
         {
-            Window_fin Fen = new Window_fin();
-            Fen.ShowDialog();
+            mainWin.Terminer_partie();
             this.Close();
         }
 
