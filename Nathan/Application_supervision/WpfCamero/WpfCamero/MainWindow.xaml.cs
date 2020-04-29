@@ -60,10 +60,10 @@ namespace WpfCamero
             string myConnection = connectionString;
             MySqlConnection myConn = new MySqlConnection(myConnection);
             myConn.Open();
+
             string sql = "SELECT text FROM tbindice WHERE date_dernier_envoi = (SELECT MAX(date_dernier_envoi)) ORDER BY date_dernier_envoi DESC LIMIT 2";
             MySqlCommand cmd = new MySqlCommand(sql, myConn);
             TxtIndice.Text = cmd.ExecuteScalar().ToString();
-
             
             string sql2 = "SELECT nom FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
             MySqlCommand cmd2 = new MySqlCommand(sql2, myConn);

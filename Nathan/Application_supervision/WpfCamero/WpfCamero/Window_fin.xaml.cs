@@ -49,6 +49,19 @@ namespace WpfCamero
             bdd.Fin_Equipe(equipe);
             bdd.MAJScore(equipe);
 
+            string connectionString = "SERVER=127.0.0.1; DATABASE=dbsupervision; UID=superviseur; PASSWORD=Nantes44";
+            string myConnection = connectionString;
+            MySqlConnection myConn = new MySqlConnection(myConnection);
+            myConn.Open();
+
+            string sql = "SELECT score FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
+            MySqlCommand cmd = new MySqlCommand(sql, myConn);
+            TxtScore.Text = cmd.ExecuteScalar().ToString();
+
+            string sql2 = "SELECT nom FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
+            MySqlCommand cmd2 = new MySqlCommand(sql2, myConn);
+            TxtEquipe.Text = cmd2.ExecuteScalar().ToString();
+
         }
 
         private void BtnLister_Click(object sender, EventArgs e)

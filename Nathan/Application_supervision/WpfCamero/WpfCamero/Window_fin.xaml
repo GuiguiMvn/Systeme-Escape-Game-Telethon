@@ -8,7 +8,7 @@
         Title="La partie est terminée :" Height="500" Width="400" MinHeight="500" MinWidth="400" MaxHeight="500" MaxWidth="400" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <Image HorizontalAlignment="Left" Height="56" Margin="0,0,-71,0" VerticalAlignment="Top" Width="463" >
+        <Image HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="392" >
             <Image.Source>
                 <BitmapImage UriSource="Window fin partie.PNG" />
             </Image.Source>
@@ -19,8 +19,10 @@
                 <BitmapImage UriSource="Window envoi d'indice (pied de page).PNG" />
             </Image.Source>
         </Image>
-        <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="34" Margin="108,45,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="160"/>
+        <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="43" Margin="208,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Arial Unicode MS" TextDecorations="{x:Null}" TextAlignment="Center"/>
         <Button x:Name="BtnLister"  Content="Afficher le classement des équipes !" HorizontalAlignment="Left" Margin="24,346,0,0" VerticalAlignment="Top" Width="344" Click="BtnLister_Click_1" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Height="41"/>
+        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="10,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
+        <Label Content="Votre score est de : " HorizontalAlignment="Left" Height="43" Margin="16,122,0,0" VerticalAlignment="Top" Width="328" Foreground="Black" FontSize="20" FontFamily="Arial Unicode MS" />
 
     </Grid>
 </Window>
