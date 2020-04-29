@@ -1,17 +1,20 @@
-//DFRobot.com
-//Compatible with the Arduino IDE 1.0
-//Library version:1.1
+
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x20,16,2);  //l adresse 0x27 est a changé en fonction de votre écrant
+
+LiquidCrystal_I2C lcd(0x20,16,2);  // Définition de la taille de l'écran
+
+
+
 void setup()
 {
-lcd.init();                      // initialize the lcd
+lcd.init(); // Initialisation de l'écran                  
 
-// Print a message to the LCD.
-lcd.backlight();
-lcd.print("Bonjour les amis");
+lcd.backlight(); // Initialisation de la technologie de rétroéclairage Backlight déployée dans certain écran LED
+
+lcd.print("Bonjour les amis"); // Ecriture du message 
 }
 
 void loop()
