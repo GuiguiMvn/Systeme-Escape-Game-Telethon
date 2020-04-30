@@ -1,6 +1,6 @@
 ﻿namespace WpfCamero
 {
-    partial class Classement
+    partial class Form_Classement
     {
         /// <summary>
         /// Required designer variable.

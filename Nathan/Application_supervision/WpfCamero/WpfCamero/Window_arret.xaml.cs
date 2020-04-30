@@ -17,10 +17,10 @@ namespace WpfCamero
     /// <summary>
     /// Logique d'interaction pour arret.xaml
     /// </summary>
-    public partial class arret : Window
+    public partial class Window_arret : Window
     {
         MainWindow mainWin;
-        public arret(MainWindow fen)
+        public Window_arret(MainWindow fen)
         {
             InitializeComponent();
             mainWin = fen;
