@@ -169,7 +169,7 @@ namespace WpfCamero
 
         private void BtnLister_Click_1(object sender, RoutedEventArgs e)
         {
-            Classement classement = new Classement();
+            Form_Classement classement = new Form_Classement();
             classement.ShowDialog();
         }
     }
