@@ -66,7 +66,7 @@ namespace WpfCamero
 
         private void BtnLister_Click(object sender, EventArgs e)
         {
-            Classement classement = new Classement();
+            Form_Classement classement = new Form_Classement();
             classement.ShowDialog();
         }
 

@@ -17,11 +17,11 @@ using System.Data.SqlClient;
 
 namespace WpfCamero
 {
-    public partial class Classement : Form
+    public partial class Form_Classement : Form
     {
 
         string connectionString = "SERVER=127.0.0.1; DATABASE=dbsupervision; UID=superviseur; PASSWORD=Nantes44";
-        public Classement()
+        public Form_Classement()
         {
             InitializeComponent();
 
