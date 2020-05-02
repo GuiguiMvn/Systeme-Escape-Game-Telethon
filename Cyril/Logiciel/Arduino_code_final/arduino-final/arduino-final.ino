@@ -110,10 +110,11 @@ void kpdEvent (KeypadEvent Key)
 
 void checkPassword(void)
 {
- jouer();
+ 
  // si le mot de passe est juste...
   if (pwd.evaluate())
   {
+    jouer();// Fonction pour joueur la musique
     lcd.backlight();
     lcd.print("Bravo !!!!");
     pwd.reset();  // on remet à zéro la saisie
