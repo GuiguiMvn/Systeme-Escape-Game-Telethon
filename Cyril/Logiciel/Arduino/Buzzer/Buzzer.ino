@@ -1,98 +1,59 @@
-// constantes de fréquences
-#define DON 33
-#define REB 35
-#define REN 37
-#define MIB 39
-#define MIN 41
-#define FAN 44
-#define SOB 46
-#define SON 49
-#define LAB 52
-#define LAN 55
-#define SIB 58
-#define SIN 62
-
-// tableau pour la mélodie
-int part[50][3] = {
-  DON, 2, 100,
-  DON, 2, 100,
-  DON, 2, 100,
-  LAB, 1, 75,
-  MIB, 2, 25,
-  DON, 2, 100,
-  LAB, 1, 75,
-  MIB, 2, 25,
-  DON, 2, 200,
-  SON, 2, 100,
-  SON, 2, 100,
-  SON, 2, 100,
-  LAB, 2, 75,
-  MIB, 2, 25,
-  SIN, 1, 100,
-  LAB, 1, 75,
-  MIB, 2, 25,
-  DON, 2, 200,
-  DON, 3, 100,
-  DON, 2, 100,
-  DON, 3, 25,
-  SIN, 2, 25,
-  DON, 3, 25,
-  0, 0, 75,
-  SIN, 2, 50,
-  SIB, 2, 100,
-  SIB, 1, 100,
-  SON, 2, 25,
-  SOB, 2, 25,
-  SON, 2, 25,
-  0, 0, 75,
-  SOB, 2, 50,
-  FAN, 2, 100,
-  SON, 1, 100,
-  SIB, 1, 100,
-  SON, 1, 75,
-  MIB, 2, 25,
-  DON, 2, 100,
-  LAB, 1, 75,
-  MIB, 2, 25,
-  DON, 2, 200,
-  -1
+// les constantes des fréquences de base
+const char DON = 65;
+const char DOD = 69;
+const char REN = 74;
+const char RED = 78;
+const char MIN = 83;
+const char FAN = 87;
+const char FAD = 93;
+const char SON = 98;
+const char SOD = 104;
+const char LAN = 110;
+const char LAD = 117;
+const char SIN = 123;
+//Le tableau pour la mélodie
+char auClair[11][3]={
+    DON, 2, 2,
+    DON, 2, 2,
+    DON, 2, 2,
+    REN, 2, 2,
+    MIN, 4, 2,
+    REN, 4, 2,
+    DON, 2, 2,
+    MIN, 2, 2,
+    REN, 2, 2,
+    REN, 2, 2,
+    DON, 8, 2
 };
-int pinSon = 12; // pin de connection du haut-parleur
-int tempo = 120; // variable du tempo
-int duree = 0; // variable de durée de note
-unsigned long tempsDep; // variable de temps de départ
-int p = 0; // variable de position dans le tableau de mélodie
-void setup() {
-  pinMode(pinSon,OUTPUT); 
-  tempsDep = millis(); // initialisation du temps de départ
+int dureeBase=500; //on fixe la durée de basse à 500 millisecondes
+unsigned long tempsDep; // variable pour le temps de départ
+unsigned long tempsAct; // variable pour le temps actuel
+int duree; //variable pour la durée d'attente de la note en cours
+int n=0; // position dans le tableau de mélodie
+
+void setup(){
+  pinMode(12,OUTPUT);//on met le pin 3 en mode OUTPUT
+  tempsDep=millis(); // on initialise le temps de départ au temps Arduino
+  duree=0; //on initialise l'attente à 0
 }
 
-void loop() {
-  joue(); // appel de la fonction pour jouer la mélodie
-}
-
-//fonction de lecture de la mélodie
-void joue() {
-  unsigned long tempsAct = millis();
-  if (tempsAct - tempsDep >= duree) {
-    if (part[p][0] != -1) { // test de fin de tableau
-      noTone(pinSon);
-      delay(10); // délai pour l'attaque
-      // la fréquence est calculée en fonction des fréquences de base
-      // et de l'octave définit dans le tableau
-      int frequence = part[p][0] * pow(2, part[p][1] + 1);
-      // la durée de la note est calculée comme en musique
-      duree = 1000 / (tempo / 60) * (float(part[p][2]) / 100);
-      if (frequence > 0) {
-        tone (pinSon, frequence);
-      }
-      p++; //incrémentation de la position dans le tableau
-    }
-    else { 
-      noTone(pinSon);
-      p=0;// retour au début du tableau
-      duree=1000;// attente avant répétition
-    }
-    tempsDep=tempsAct;
+void loop(){
+  tempsAct=millis(); // on récupère le temps Arduino
+  if (tempsAct-tempsDep>=duree){ // on regarde si le temps est écoulé
+    noTone(12); // on stoppe le son
+    delay(10); // délay pour l'attaque du son
+    joueNote(auClair[n][0],auClair[n][2]); // on appelle la fonction qui joue la bonne note
+    duree=dureeBase*auClair[n][1]; // on fixe la duree d'attente
+    tempsDep=tempsAct; //on initialise le temps de départ
+    n++; // on incrémente la position dans le tableau
+    if (n>10) // on teste si on dépasse la fin du tableau
+      n=0; // on revient au début du tableau
   }
+  // on peut placer ici du code à excécuter en attendant
+  // il faut bien-sûr ne pas utiliser la fonction delay() ;)
+}
+
+// fonction de calcul de la fréquence en fonction de l'octave
+void joueNote(int nt,int oc){
+  tone(12,nt*pow(2,oc)); //on joue la note à la bonne fréquence
 }
