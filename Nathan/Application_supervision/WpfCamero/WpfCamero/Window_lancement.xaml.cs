@@ -66,7 +66,6 @@ namespace WpfCamero
             public string Date { get; set; }
             public string Heure_debut { get; set; }
             public string Heure_fin { get; set; }
-
             public string NbJoueurs { get; set; }
 
             // Constructeur

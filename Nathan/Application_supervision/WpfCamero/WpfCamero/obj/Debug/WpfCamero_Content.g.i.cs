@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("attention.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ligne%20couleurs.png")]
 
 

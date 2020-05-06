@@ -131,6 +131,12 @@ namespace WpfCamero
             Fen.ShowDialog();
 
         }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            Window_About About = new Window_About();
+            About.ShowDialog();
+        }
     }
 
 

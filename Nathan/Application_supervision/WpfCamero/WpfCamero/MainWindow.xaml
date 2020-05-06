@@ -50,14 +50,15 @@
         </Image>
         <Label Content="640 x 480" HorizontalAlignment="Left" Height="31" Margin="630,-39,0,0" VerticalAlignment="Top" Width="67" FontStyle="Italic" FontFamily="Sergoe UI"/>
         <Label Content="192.168.1.4" HorizontalAlignment="Left" Height="31" Margin="348,-41,0,0" VerticalAlignment="Top" Width="77" FontStyle="Italic" FontFamily="Sergoe UI"/>
-        <Button x:Name="Stopper_partie" Content="          Stopper la partie" HorizontalAlignment="Left" Height="47" Margin="542,436,0,-55" VerticalAlignment="Top" Width="153" Background="White" BorderBrush="Red" Foreground="Red" FontStyle="Italic" Click="Stopper_partie_Click"/>
-        <Image HorizontalAlignment="Left" Height="33" Margin="554,443,0,-48" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.488,0.833" >
+        <Button x:Name="Stopper_partie" Content="          Stopper la partie" HorizontalAlignment="Left" Height="47" Margin="544,431,0,-50" VerticalAlignment="Top" Width="153" Background="White" BorderBrush="Red" Foreground="Red" FontStyle="Italic" Click="Stopper_partie_Click"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="554,438,0,-43" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.488,0.833" >
             <Image.Source>
                 <BitmapImage UriSource="attention.PNG" />
             </Image.Source>
         </Image>
         <TextBlock x:Name="TxtIndice" HorizontalAlignment="Left" Height="65" Margin="-275,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Foreground="#FF5600BD" FontSize="16" FontFamily="Yu Gothic UI Semilight"/>
         <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="-69,-123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="586" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
+        <Button x:Name="btnAbout" Content="À propos de l'Escape Game" HorizontalAlignment="Left" Height="33" Margin="160,524,0,-129" VerticalAlignment="Top" Width="194" Background="#FFF7A9DE" BorderBrush="#FFAC98FF" FontStyle="Italic" Click="btnAbout_Click"/>
     </Grid>
 
 

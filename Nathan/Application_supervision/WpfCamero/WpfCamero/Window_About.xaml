@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfCamero.Window_About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCamero"
+        mc:Ignorable="d"
+        Title="À propos de l'Escape Game :" Height="381" Width="493" MinHeight="381" MinWidth="493" MaxHeight="381" MaxWidth="493">
+    <Grid Margin="0,0,2,0" Background="White">
+        <Rectangle Fill="#FFF4FF86" HorizontalAlignment="Left" Height="68" Margin="10,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="463"/>
+        <Image HorizontalAlignment="Left" Height="83" Margin="10,12,0,0" VerticalAlignment="Top" Width="229" Source="telethon_image.png"/>
+        <Image HorizontalAlignment="Left" Height="83" Margin="255,12,0,0" VerticalAlignment="Top" Width="218" Source="logo_campus.png"/>
+        <Label Content="L'Escape Game a été développé par des étudiants de BTS Systèmes &#xA;Numériques du Campus Saint Félix - La Salle de Nantes en partenariat&#xA;avec le Téléthon de la ville de Saint-Colomban." Height="79" Margin="10,100,10,171" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontStyle="Italic" FontSize="14"/>
+        <Label Content="Étudiant chargé du sous-système musique : Cyril DOHIN&#xA;Étudiant chargé du sous-système médaillon : Guillaume MONVOISIN&#xA;Étudiant chargé de l'application de supervision : Nathan GUIGAND" HorizontalAlignment="Left" Height="69" Margin="10,216,0,0" VerticalAlignment="Top" Width="463" FontFamily="Tw Cen MT" FontSize="16"/>
+        <Label Content="© Tous droits réservés - 2020" HorizontalAlignment="Left" Height="26" Margin="144,302,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <Image HorizontalAlignment="Left" Height="17" Margin="0,333,0,0" VerticalAlignment="Top" Width="483" Source="ligne couleurs.png"/>
+    </Grid>
+</Window>

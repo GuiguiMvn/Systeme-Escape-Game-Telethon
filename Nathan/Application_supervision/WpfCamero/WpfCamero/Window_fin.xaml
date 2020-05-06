@@ -21,9 +21,9 @@
         </Image>
         <TextBlock x:Name="TxtScore" HorizontalAlignment="Left" Height="43" Margin="197,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Arial Unicode MS" TextDecorations="{x:Null}" TextAlignment="Center"/>
         <Button x:Name="BtnLister"  Content="Afficher le classement des équipes !" HorizontalAlignment="Left" Margin="24,322,0,0" VerticalAlignment="Top" Width="344" Click="BtnLister_Click_1" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Height="41"/>
-        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
+        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="65" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="372" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
         <Label Content="Votre score est de : " HorizontalAlignment="Left" Height="43" Margin="29,182,0,0" VerticalAlignment="Top" Width="328" Foreground="Black" FontSize="20" FontFamily="Arial Unicode MS" />
-        <Label Content="La partie est terminée !" HorizontalAlignment="Left" Height="49" Margin="92,102,0,0" VerticalAlignment="Top" Width="210" FontSize="20" FontStyle="Italic" Background="White" Foreground="Red"/>
+        <Label Content="La partie est terminée !" HorizontalAlignment="Left" Height="49" Margin="92,122,0,0" VerticalAlignment="Top" Width="210" FontSize="20" FontStyle="Italic" Background="White" Foreground="Red"/>
 
     </Grid>
 </Window>

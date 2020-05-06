@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Window_About.xaml.cs">
+      <DependentUpon>Window_About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window_arret.xaml.cs">
       <DependentUpon>Window_arret.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
     <Compile Include="Window_lancement.xaml.cs">
       <DependentUpon>Window_lancement.xaml</DependentUpon>
     </Compile>
+    <Page Include="Window_About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window_arret.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,6 +227,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ligne violette avec logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telethon_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="telethon_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_campus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ligne couleurs.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ligne couleurs - Copier.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ligne couleurs - Copier %282%29.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

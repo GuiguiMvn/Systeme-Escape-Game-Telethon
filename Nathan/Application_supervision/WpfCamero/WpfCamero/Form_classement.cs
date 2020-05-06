@@ -31,17 +31,20 @@ namespace WpfCamero
             MySqlConnection myConn = new MySqlConnection(myConnection);
             myConn.Open();
 
-            MySqlCommand Sql = new MySqlCommand("SELECT nom, score, date FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC", myConn);
+            MySqlCommand Sql = new MySqlCommand("SELECT nom, score, date, nbjoueurs FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC", myConn);
             MySqlDataReader dr;
             dr = Sql.ExecuteReader();
             while (dr.Read())
             {
-                ListViewItem item = new ListViewItem(dr["nom"].ToString());
-                item.SubItems.Add(dr["date"].ToString());
+                ListViewItem item = new ListViewItem(dr["Nom"].ToString());
+                item.SubItems.Add(dr["Date"].ToString());
                 item.SubItems.Add(dr["Score"].ToString());
+                item.SubItems.Add(dr["nbjoueurs"].ToString());
 
                 listEquipe.Items.Add(item);
             }
         }
+
+      
     }
 }

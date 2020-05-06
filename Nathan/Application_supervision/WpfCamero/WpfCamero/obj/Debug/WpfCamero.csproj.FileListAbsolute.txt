@@ -41,3 +41,5 @@ C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_arret.g.cs
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_arret.baml
 C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\WpfCamero.Form_Classement.resources
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_About.g.cs
+C:\Users\Nathan\Documents\GitHub\Systeme-Escape-Game-Telethon\Nathan\Application_supervision\WpfCamero\WpfCamero\obj\Debug\Window_About.baml
