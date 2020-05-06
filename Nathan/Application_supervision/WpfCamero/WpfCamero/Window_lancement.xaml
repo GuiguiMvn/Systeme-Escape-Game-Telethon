@@ -27,11 +27,25 @@
         </Image>
 
         <TextBox x:Name ="TxtBoxEquipe" HorizontalAlignment="Left" Height="27" Margin="162,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Background="#FFFFF3BF" BorderBrush="#FFE804FF"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="27,126,0,0" TextWrapping="Wrap" Text="Nom de l'équipe :" VerticalAlignment="Top" Width="126" FontSize="14" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Background="#FFF7F5BB" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="20,126,0,0" TextWrapping="Wrap" Text="Nom de l'équipe :" VerticalAlignment="Top" Width="137" FontSize="14" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Background="#FFF7F5BB" TextAlignment="Center" LineHeight="7"/>
 
         <Button x:Name="btnWindow_superviser" HorizontalAlignment="Center" Height="79" Margin="148,311,159,79" VerticalAlignment="Center" Width="85" Click="btnWindow_superviser_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18" FontFamily="Century Gothic" Foreground="{x:Null}" FontWeight="Bold" Opacity="0">
             <DataGrid Height="100" Width="100"/>
         </Button>
+
+        <ComboBox x:Name="CbNbJoueurs" HorizontalAlignment="Left" Margin="220,200,0,0" VerticalAlignment="Top" Width="78" Foreground="#FFB9008F" BorderBrush="#FFB9105D">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FFF9ED6E" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="27,200,0,0" TextWrapping="Wrap" Text="Nombre de joueurs :" VerticalAlignment="Top" Width="159" FontSize="14" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold" Background="#FFF7F5BB" TextAlignment="Center"/>
 
 
     </Grid>

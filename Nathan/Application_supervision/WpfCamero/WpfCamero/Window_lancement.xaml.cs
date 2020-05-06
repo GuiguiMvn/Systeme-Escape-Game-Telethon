@@ -44,6 +44,7 @@ namespace WpfCamero
             equipe.Nom = TxtBoxEquipe.Text;
             equipe.Score = "0000";
             equipe.Heure_fin = "00:00:00";
+            equipe.NbJoueurs = CbNbJoueurs.Text;
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             Bdd bdd = new Bdd();
@@ -65,6 +66,8 @@ namespace WpfCamero
             public string Date { get; set; }
             public string Heure_debut { get; set; }
             public string Heure_fin { get; set; }
+
+            public string NbJoueurs { get; set; }
 
             // Constructeur
             public Equipe()
@@ -102,13 +105,14 @@ namespace WpfCamero
                     MySqlCommand cmd = this.connection.CreateCommand();
 
                     // Requête SQL
-                    cmd.CommandText = "INSERT INTO tbequipe (id, nom, score, date, heure_debut, heure_fin) VALUES (@id, @nom, @score, NOW(), NOW(), @heure_fin)";
+                    cmd.CommandText = "INSERT INTO tbequipe (id, nom, score, date, heure_debut, heure_fin, nbjoueurs) VALUES (@id, @nom, @score, NOW(), NOW(), @heure_fin, @nbjoueurs)";
 
                     // Utilisation de l'objet contact passé en paramètre
                     cmd.Parameters.AddWithValue("@id", equipe.Id);
                     cmd.Parameters.AddWithValue("@nom", equipe.Nom);
                     cmd.Parameters.AddWithValue("@score", equipe.Score);
                     cmd.Parameters.AddWithValue("@heure_fin", equipe.Heure_fin);
+                    cmd.Parameters.AddWithValue("@nbjoueurs", equipe.NbJoueurs);
 
 
                     // Exécution de la commande SQL
@@ -123,5 +127,6 @@ namespace WpfCamero
                 }
             }
         }
+
     }
 }
