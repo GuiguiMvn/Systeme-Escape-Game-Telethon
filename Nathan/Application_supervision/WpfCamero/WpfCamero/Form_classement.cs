@@ -25,6 +25,9 @@ namespace WpfCamero
         {
             InitializeComponent();
 
+
+            // Remplissage du tableau avec les équipes :
+
             listEquipe.Items.Clear();
 
             string myConnection = connectionString;

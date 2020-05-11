@@ -54,17 +54,21 @@ namespace WpfCamero
             MySqlConnection myConn = new MySqlConnection(myConnection);
             myConn.Open();
 
+
+            // Remplissage de la zone de texte du score obtenu avec la requête SQL :
             string sql = "SELECT score FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
             MySqlCommand cmd = new MySqlCommand(sql, myConn);
             TxtScore.Text = cmd.ExecuteScalar().ToString();
 
+
+            // Remplissage de la zone de texte du nom de l'équipe avec la requête SQL :
             string sql2 = "SELECT nom FROM tbequipe WHERE date = (SELECT MAX(date)) ORDER BY date DESC LIMIT 1 ";
             MySqlCommand cmd2 = new MySqlCommand(sql2, myConn);
             TxtEquipe.Text = cmd2.ExecuteScalar().ToString();
 
         }
 
-        private void BtnLister_Click(object sender, EventArgs e)
+        private void BtnLister_Click(object sender, EventArgs e) // Action du bouton "Afficher le classement des équipes" :
         {
             Form_Classement classement = new Form_Classement();
             classement.ShowDialog();

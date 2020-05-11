@@ -36,7 +36,7 @@ namespace WpfCamero
             InitializeComponent();
         }
 
-        private void btnWindow_superviser_Click(object sender, EventArgs e)
+        private void btnWindow_superviser_Click(object sender, EventArgs e) // Action du bouton de lancement de la partie
         {
 
             // Créer une équipe à ajouter

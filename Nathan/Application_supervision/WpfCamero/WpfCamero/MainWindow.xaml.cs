@@ -88,13 +88,13 @@ namespace WpfCamero
 
         }
 
-        void timercam_Tick(object sender, EventArgs e)
+        void timercam_Tick(object sender, EventArgs e) // Fonction de rafraichissement de l'image de la caméra IP.
         {
             lblTime.Content = DateTime.Now.ToLongTimeString();
             wbDLink.Refresh();
         }
 
-        void timerchrono_Tick(object sender, EventArgs e)
+        void timerchrono_Tick(object sender, EventArgs e) //Fonction du chronomètre :
         {
             if (time > 0)
             {
@@ -103,7 +103,7 @@ namespace WpfCamero
             }
             else
             {
-                timerchrono.Stop();
+                timerchrono.Stop(); //Arrête immédiatement le chronometre et le bloque
                 Window_fin Fen = new Window_fin();
                 Fen.ShowDialog();
             }
@@ -118,13 +118,13 @@ namespace WpfCamero
         }
 
 
-        private void Stopper_partie_Click(object sender, RoutedEventArgs e)
+        private void Stopper_partie_Click(object sender, RoutedEventArgs e) //Action du clic sur le bouton d'arrêt prématuré
         {
             Window_arret Fen = new Window_arret(this);
             Fen.ShowDialog();
         }
 
-        public void Terminer_partie()
+        public void Terminer_partie() // Fonction appeler lorsque la partie est terminée (par le chronometre ou l'ordre reçu du sous-système médaillon).
         {
             timerchrono.Stop();
             Window_fin Fen = new Window_fin();
@@ -132,7 +132,7 @@ namespace WpfCamero
 
         }
 
-        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        private void btnAbout_Click(object sender, RoutedEventArgs e) //Action du bouton "En savoir plus"
         {
             Window_About About = new Window_About();
             About.ShowDialog();

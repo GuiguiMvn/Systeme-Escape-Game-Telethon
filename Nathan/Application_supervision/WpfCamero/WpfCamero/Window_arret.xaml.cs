@@ -26,13 +26,13 @@ namespace WpfCamero
             mainWin = fen;
         }
 
-        private void BtnStopper_Click(object sender, RoutedEventArgs e)
+        private void BtnStopper_Click(object sender, RoutedEventArgs e) // Action du bouton de confirmation "Stopper la partie"
         {
             mainWin.Terminer_partie();
             this.Close();
         }
 
-        private void BtnAnnuler_Click(object sender, RoutedEventArgs e)
+        private void BtnAnnuler_Click(object sender, RoutedEventArgs e) // Action du bouton "annuler"
         {
             this.Close();
         }
