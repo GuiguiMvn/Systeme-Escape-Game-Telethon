@@ -1,6 +1,3 @@
-#!/usr/bin/env python2.7
-#-- coding: utf-8 --
-
 import RPi.GPIO as GPIO
 from pirc522 import RFID
 import time
@@ -32,3 +29,4 @@ while True:
                 print('UID non valide'.format(uid))
                 GPIO.output(LED, GPIO.LOW)
             
+			
