@@ -34,7 +34,8 @@ namespace WpfCamero
             MySqlConnection myConn = new MySqlConnection(myConnection);
             myConn.Open();
 
-            MySqlCommand Sql = new MySqlCommand("SELECT nom, score, date, nbjoueurs FROM `tbequipe` WHERE score=(SELECT MAX(score)) ORDER BY score DESC", myConn);
+            MySqlCommand Sql = new MySqlCommand("SELECT nom, score, date, nbjoueurs FROM `tbequipe`" +
+                " WHERE score=(SELECT MAX(score)) ORDER BY score DESC", myConn);
             MySqlDataReader dr;
             dr = Sql.ExecuteReader();
             while (dr.Read())
