@@ -11,9 +11,12 @@ const char SOD = 104;
 const char LAN = 110;
 const char LAD = 117;
 const char SIN = 123;
+const int bra = A0;
+const int LimiteB =600;
+const int LimiteH = 944;
 //Le tableau pour la mélodie
 char auClair[11][3]={
-    DON, 2, 2,
+  DON, 2, 2,
     DON, 2, 2,
     DON, 2, 2,
     REN, 2, 2,
@@ -24,13 +27,15 @@ char auClair[11][3]={
     REN, 2, 2,
     REN, 2, 2,
     DON, 8, 2
+ 
 };
 int dureeBase=500; //on fixe la durée de basse à 500 millisecondes
 unsigned long tempsDep; // variable pour le temps de départ
 unsigned long tempsAct; // variable pour le temps actuel
 int duree; //variable pour la durée d'attente de la note en cours
 int n=0; // position dans le tableau de mélodie
-
+int Frequence = 0;
+int va= 0;
 void setup(){
   pinMode(12,OUTPUT);//on met le pin 3 en mode OUTPUT
   tempsDep=millis(); // on initialise le temps de départ au temps Arduino
@@ -38,6 +43,7 @@ void setup(){
 }
 
 void loop(){
+  
   tempsAct=millis(); // on récupère le temps Arduino
   if (tempsAct-tempsDep>=duree){ // on regarde si le temps est écoulé
     noTone(12); // on stoppe le son
@@ -48,7 +54,13 @@ void loop(){
     n++; // on incrémente la position dans le tableau
     if (n>10) // on teste si on dépasse la fin du tableau
       n=0; // on revient au début du tableau
+      
   }
+  
+ 
+  va = analogRead(bra);
+  Frequence = map(bra, LimiteB, LimiteH, 50, 4000);
+   Serial.print(Frequence);
   // on peut placer ici du code à excécuter en attendant
   // il faut bien-sûr ne pas utiliser la fonction delay() ;)
 }
