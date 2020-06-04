@@ -22,7 +22,7 @@
             </Image.Source>
         </Image>
 
-        <WebBrowser x:Name="wbDLink" Source="https://stfelixlasalle.fr/" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
+        <WebBrowser x:Name="wbDLink" Source="http://192.168.1.50/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
 
         <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-310,24,0,0" Opacity="0.165" >
