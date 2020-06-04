@@ -10,6 +10,9 @@
 
     <Grid Margin="286,133,2,143" RenderTransformOrigin="0.401,-0.308">
 
+        <WebBrowser x:Name="wbDLink" Source="http://192.168.1.50/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,5,-43" Height="471" Width="694" />
+
+
         <Image HorizontalAlignment="Left" Height="83" Margin="-286,-133,-1,0" VerticalAlignment="Top" Width="996" >
             <Image.Source>
                 <BitmapImage UriSource="ligne violette avec logo.png" />
@@ -21,8 +24,6 @@
                 <BitmapImage UriSource="Ligne jaune.PNG"/>
             </Image.Source>
         </Image>
-
-        <WebBrowser x:Name="wbDLink" Source="http://192.168.1.50/image/jpeg.cgi" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30" />
 
 
         <Image HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="350" Margin="-310,24,0,0" Opacity="0.165" >
@@ -39,21 +40,21 @@
         <Label Content="Message dans la salle :" HorizontalAlignment="Left" Height="29" Margin="-286,283,0,0" VerticalAlignment="Top" Width="194" FontFamily="Century Gothic" FontSize="16"/>
         <Rectangle Fill="#FFFFFFBA" HorizontalAlignment="Left" Height="65" Margin="-280,312,0,0" Stroke="Black" VerticalAlignment="Top" Width="240"/>
 
-        <Button x:Name="btnWindow_indice" Content="Envoyer un indice" HorizontalAlignment="Center" Height="40" Margin="-264,199,763,189" VerticalAlignment="Center" Width="210" Click="btnWindow_indice_Click" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold"/>
+        <Button x:Name="btnWindow_indice" Content="Envoyer un indice" HorizontalAlignment="Center" Height="40" Margin="-250,197,749,191" VerticalAlignment="Center" Width="210" Click="btnWindow_indice_Click" Background="#FFF7F5BB" BorderBrush="#FF6109FB" FontSize="18" FontFamily="Century Gothic" Foreground="#FF6109FB" FontWeight="Bold"/>
         <Label x:Name="lblTime" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="232"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="43" Margin="-163,-15,0,0" Stroke="#FFF137E9" VerticalAlignment="Top" Width="157" StrokeThickness="2"/>
         <TextBlock x:Name="TBCountDown" Text ="00:00:00" TextAlignment="Center" FontSize="35" Margin="-158,-21,713,397" FontFamily="Yu Gothic Medium" TextDecorations="{x:Null}" Foreground="White"/>
+        <Button x:Name="Stopper_partie" Content="Stopper la partie" Margin="-225,439,793,-43" Background="White" BorderBrush="Red" Foreground="Red" FontStyle="Italic" Click="Stopper_partie_Click"/>
+        <TextBlock x:Name="TxtIndice" HorizontalAlignment="Left" Height="65" Margin="-275,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Foreground="#FF5600BD" FontSize="16" FontFamily="Yu Gothic UI Semilight"/>
+        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="-69,-123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="586" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
+        <Button x:Name="btnAbout" Content="À propos de l'Escape Game" Margin="-249,397,772,-2" Background="#FFF7A9DE" BorderBrush="#FFAC98FF" FontStyle="Italic" Click="btnAbout_Click"/>
         <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="711" Margin="0,-50,-2,0" >
             <Image.Source>
                 <BitmapImage UriSource="Ligne_camera.PNG"/>
             </Image.Source>
         </Image>
-        <Label Content="640 x 480" HorizontalAlignment="Left" Height="31" Margin="630,-39,0,0" VerticalAlignment="Top" Width="67" FontStyle="Italic" FontFamily="Sergoe UI"/>
         <Label Content="192.168.1.4" HorizontalAlignment="Left" Height="31" Margin="348,-41,0,0" VerticalAlignment="Top" Width="77" FontStyle="Italic" FontFamily="Sergoe UI"/>
-        <Button x:Name="Stopper_partie" Content="Stopper la partie" HorizontalAlignment="Right" Margin="0,431,12,-35" Width="104" Background="White" BorderBrush="Red" Foreground="Red" FontStyle="Italic" Click="Stopper_partie_Click"/>
-        <TextBlock x:Name="TxtIndice" HorizontalAlignment="Left" Height="65" Margin="-275,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Foreground="#FF5600BD" FontSize="16" FontFamily="Yu Gothic UI Semilight"/>
-        <TextBlock x:Name="TxtEquipe" HorizontalAlignment="Left" Height="39" Margin="-69,-123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="586" Foreground="Black" FontSize="24" FontWeight="Bold" FontFamily="Stencil Std" TextDecorations="{x:Null}" TextAlignment="Center"/>
-        <Button x:Name="btnAbout" Content="À propos de l'Escape Game" Margin="-275,446,825,-43" Background="#FFF7A9DE" BorderBrush="#FFAC98FF" FontStyle="Italic" Click="btnAbout_Click"/>
+        <Label Content="640 x 480" HorizontalAlignment="Left" Height="31" Margin="630,-39,0,0" VerticalAlignment="Top" Width="67" FontStyle="Italic" FontFamily="Sergoe UI"/>
     </Grid>
 
 
