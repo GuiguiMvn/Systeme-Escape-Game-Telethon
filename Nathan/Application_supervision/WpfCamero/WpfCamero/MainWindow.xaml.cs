@@ -34,7 +34,7 @@ namespace WpfCamero
         private DispatcherTimer timerchrono; //Minuterie pour le chronometre.
         private DispatcherTimer timermessage; //Minuterie pour le renouvellement du message (indice).
 
-        private int time = 60; //1h = 3600s
+        private int time = 3600; //1h = 3600s
 
         public MainWindow()
         {
@@ -42,7 +42,7 @@ namespace WpfCamero
 
             // Fonction de rafraichissement de l'image de la caméra IP :
             timercam = new DispatcherTimer();
-            timercam.Interval = TimeSpan.FromSeconds(5);
+            timercam.Interval = TimeSpan.FromSeconds(0.2);
             timercam.Tick += timercam_Tick;
             timercam.Start();
 
