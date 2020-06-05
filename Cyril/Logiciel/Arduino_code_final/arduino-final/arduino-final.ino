@@ -123,7 +123,7 @@ void checkPassword(void)
   else
  {
    lcd.backlight();
-   lcd.print("erreur, réessayez");
+   lcd.print("erreur, reessayez");
    pwd.reset();  // on remet à zéro la saisie
  }
  // on remet à zéro systématiquement après avoir vérifié pour ne pas avoir d'erreur
